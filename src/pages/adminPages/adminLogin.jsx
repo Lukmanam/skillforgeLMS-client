@@ -1,23 +1,55 @@
-import React, { useState } from "react";
+import React from "react";
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import { useFormik } from "formik";
+import { Link, useNavigate } from "react-router-dom";
+import { adminLoginValidation } from "../../validations/admin/adminLoginValidation";
+import { useDispatch } from "react-redux";
+import AdminDashboard from "./AdminDashboard";
+import { adminLoginVerify } from "../../../api/adminApi";
+import { adminLogin } from "../../reduxStore/slices/adminSlice";
+
+
 
 const AdminLogin = () => {
-  const [username, setUsername] = useState("");
-  const [password, setPassword] = useState("");
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+  console.log("Hai admin Login page");
+  async function onSubmit(values) {
+    try { 
+      const res = await adminLoginVerify(values);
+      if (res.status === 200) {
+        const { token, userName } = res.data;
+        localStorage.setItem("adminToken", token);
+        dispatch(
+          adminLogin({
+            token: token,
+            admin: userName,
+          })
+        );
+        
+        toast(res?.data?.message);
+        navigate("/admin/dashboard");
+      }
+      if(res.status===401)
+      {
+        toast(res?.data?.message)
+      }
+    } catch (error) {
+      toast.error(error?.response?.data?.message);
+      console.log(error.message);
+    }
+  };
 
-  const handleusernameChange = (e) => {
-    console.log("username changing");
-    setUsername(e.target.value);
-  };
-  const handlepasswordChange = (e) => {
-    console.log("password changing");
-    setPassword(e.target.value);
-  };
-
-  const handleLogin = (e) => {
-    e.preventDefault();
-    console.log("USERNAME :", username);
-    console.log("PASSWORD :", password);
-  };
+  const { values, errors, handleBlur, handleChange, handleSubmit } =
+    useFormik({
+      initialValues: {
+        email: "",
+        password: "",
+      },
+      validationSchema: adminLoginValidation,
+      onSubmit,
+    });
 
   return (
     <div className="mb-16">
@@ -25,10 +57,9 @@ const AdminLogin = () => {
         <img src="./assets/skillforge.svg" alt="logo" />
       </div>
       <div className="flex items-center justify-center  ">
-        
         <div className="bg-white p-8 rounded shadow-md w-96  ">
           <h1 className="text-2xl font-bold mb-4 mt-8">Admin Login</h1>
-          <form onSubmit={handleLogin}>
+          <form onSubmit={handleSubmit}>
             <div className="mb-3">
               <label
                 htmlFor="username"
@@ -38,13 +69,18 @@ const AdminLogin = () => {
               </label>
               <input
                 type="text"
-                id="username"
-                value={username}
-                onChange={handleusernameChange}
+                id="email"
+                value={values.email}
+                onChange={handleChange}
+                onBlur={handleBlur}
                 placeholder="Enter your User name"
                 className="border border-gray-300 rounded-full px-5 py-2 w-full focus:outline-none focus:border-blue-500 "
                 style={{ borderColor: "#49BBBD" }}
+              
               />
+              <br/>
+            {errors.email && <small>{errors.email}</small>}
+              <br/>
             </div>
             <div className="mb-4">
               <label
@@ -56,21 +92,24 @@ const AdminLogin = () => {
               <input
                 type="password"
                 id="password"
-                value={password}
-                placeholder="Enetr your Password"
-                onChange={handlepasswordChange}
+                value={values.password}
+                placeholder="Enter your Password"
+                onChange={handleChange}
+                onBlur={handleBlur}
                 className="border border-gray-300 mb-4 rounded-full px-3 py-2 w-full focus:outline-none focus:border-blue-500"
                 style={{ borderColor: "#49BBBD" }}
               />
+              <br/>
+            {errors.password && <small>{errors.password}</small>}
+              <br/>
             </div>
             <button
-              type="Submit"
+              type="submit"
               className="text-white rounded-full px-4 py-2 w-full font-semibold hover:bg-blue-600 mt-5 mb-4"
               style={{ backgroundColor: "#49BBBD" }}
             >
               Login
             </button>
-     
           </form>
         </div>
       </div>

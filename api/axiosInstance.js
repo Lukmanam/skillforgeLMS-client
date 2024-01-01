@@ -37,11 +37,12 @@
 //     const modifiedreq = attachToken(req, 'usertoken')
 //     return modifiedreq;
 // })
-import axios  from "axios";
+import axios from "axios";
 
 const baseURL = 'http://localhost:3000';
 const studentBaseURL = baseURL;
-const instructorBaseURL=`${baseURL}/instructor`
+const instructorBaseURL = `${baseURL}/instructor`
+const adminBaseURL = `${baseURL}/admin`
 
 const createAxiosInstance = (baseURL) => {
   const instance = axios.create({
@@ -75,11 +76,19 @@ studentaxiosInstance.interceptors.request.use(async (req) => {
 
 // instructor request interceptor
 
-export const instructoraxiosInstance=createAxiosInstance(instructorBaseURL);
-instructoraxiosInstance.interceptors.request.use(async(req)=>{
-  const modifiedReq=attachToken(req,"instructorToken");
+export const instructoraxiosInstance = createAxiosInstance(instructorBaseURL);
+instructoraxiosInstance.interceptors.request.use(async (req) => {
+  const modifiedReq = attachToken(req, "instructorToken");
   return modifiedReq;
 });
+
+// Admin request Interceptor
+
+export const adminAxiosInstance = createAxiosInstance(adminBaseURL);
+adminAxiosInstance.interceptors.request.use(async (req) => {
+  const modifiedReq = attachToken(req, "adminToken");
+  return modifiedReq;
+})
 
 
 

@@ -2,9 +2,10 @@ import React from "react";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { useFormik, Formik, Form, Field } from "formik";
-import studentSignupvalidation from "../../validations/signupValidation/StudentsignupValidation";
-import { Link,useNavigate } from "react-router-dom";
+import studentSignupvalidation from "../../validations/student/StudentsignupValidation";
+import { Link, useNavigate } from "react-router-dom";
 import { studentSignup } from "../../../api/studentApi";
+import OAuth from "../../components/studentComponent/OAuth";
 
 const initialValues = {
   name: "",
@@ -14,21 +15,31 @@ const initialValues = {
   cPassword: "",
 };
 let otpId;
-async function onSubmit(values) {
-  try {
-    const res = await studentSignup(values);
-    if (res?.status === 201) {
-      const { student } = res.data;
-      toast(res.data.message);
-    }
 
-    console.log("user signed up");
-  } catch (error) {
-    toast.error(error.response?.data?.message);
-  }
-}
 const StudentSignup = () => {
-  // const navigate
+  const navigate = useNavigate();
+  async function onSubmit(values) {
+    try {
+      const res = await studentSignup(values);
+      if (res?.status === 201) {
+        const { student, otpId } = res.data;
+        toast(res.data.message);
+        console.log("haaai navigation ");
+        navigate("/otp", {
+          state: {
+            studentEmail: student.email,
+            otpId: otpId,
+            studentId: student._id,
+          },
+        });
+        console.log("navigation");
+      }
+
+      console.log("user signed up");
+    } catch (error) {
+      toast.error(error.response?.data?.message);
+    }
+  }
   const { values, handleBlur, handleChange, handleSubmit, errors } = useFormik({
     initialValues: initialValues,
     validationSchema: studentSignupvalidation,
@@ -73,7 +84,7 @@ const StudentSignup = () => {
               <br />
               <label
                 htmlFor="email"
-                className="block text-gray-700 font-semibold mb-2 text-left"
+                className="block text-gray-700 font-semibold  text-left"
               >
                 Email :
               </label>
@@ -91,8 +102,8 @@ const StudentSignup = () => {
               {errors.email && <small>{errors.email}</small>}
               <br />
               <label
-                htmlFor="phone" 
-                className="block text-gray-700 font-semibold mb-2 text-left "
+                htmlFor="phone"
+                className="block text-gray-700 font-semibold  text-left "
               >
                 Phone :
               </label>
@@ -111,7 +122,7 @@ const StudentSignup = () => {
               <br />
               <label
                 htmlFor="password"
-                className="block text-gray-700 font-semibold mb-2 text-left"
+                className="block text-gray-700 font-semibold text-left"
               >
                 New Password :
               </label>
@@ -130,7 +141,7 @@ const StudentSignup = () => {
               <br />
               <label
                 htmlFor="cPassword"
-                className="block text-gray-700 font-semibold mb-2 text-left "
+                className="block text-gray-700 font-semibold text-left "
               >
                 Confirm new Password :
               </label>
@@ -149,12 +160,13 @@ const StudentSignup = () => {
               <br />
               <button
                 type="submit"
-                className="text-white rounded-full px-4 py-2 w-full font-semibold hover:bg-blue-600 mt-3 mb-6 "
+                className="text-white rounded-full px-4 py-2 w-full font-semibold hover:bg-blue-600 mb-2 "
                 style={{ backgroundColor: "#49BBBD" }}
               >
                 Signup
               </button>
               <p>
+           <OAuth/>
                 Already have an Account.? <Link to="/login">Login</Link>
               </p>
             </form>
