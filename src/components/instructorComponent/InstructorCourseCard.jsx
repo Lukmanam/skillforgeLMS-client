@@ -1,15 +1,18 @@
 import React from "react";
 
-const InstructorCourseCard = () => {
+
+const InstructorCourseCard = ({value}) => {
+
     return (
-        <div className="course-card bg-white rounded-lg shadow-md overflow-hidden">
-        <img src="/src/assets/deeplearning.jpg" alt="Course" className="w-full h-40 object-cover" />
-        <div className="p-4">
-          <h2 className="text-lg font-semibold mb-2">Deep Learning And AI</h2>
-          <p className="text-sm text-gray-600 mb-2">Duration: 8 months</p>
-          <p className="text-sm text-gray-600"><b>Rating: 4.5</b></p>
-        </div>
+      <div className="course-card bg-white rounded-lg shadow-md overflow-hidden">
+      <img src={value?.thumbnail} alt="Course" className="w-full h-52 object-cover" />
+      <div className="p-4">
+        <h2 className="text-xl lg:text-2xl font-semibold mb-2">{value?.courseName}</h2>
+        <p className="text-sm lg:text-base text-gray-600 mb-4">{value?.courseDescription}</p>
+        <p className="text-base lg:text-lg text-gray-600"><b> ₹{value?.price}</b></p>
       </div>
+    </div>
+    
     );
   };
 

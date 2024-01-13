@@ -6,6 +6,9 @@ import InstructorHome from "../pages/instructorPages/InstructorHome";
 import InstructorForgotPassword from "../pages/instructorPages/InstructorForgotPassword";
 import InstructorPublic from "./instructorPrivate/instructorPublic";
 import InChangePassword from "../pages/instructorPages/InChangePassword";
+import CourseManagement from "../pages/instructorPages/CourseManagementPage";
+import UpdateCourse from "../pages/instructorPages/UpdateCourse";
+import EditCourse from "../components/instructorComponent/EditCourse";
 
 
 
@@ -19,6 +22,11 @@ return(
     <Route path="/home" element={<InstructorHome/> }/>
     <Route path="/forgotPassword" element={<InstructorForgotPassword/>}/>
     <Route path="/inschangePassword" element={<InChangePassword/>}/>
+    <Route path="/courseManagement" element={<CourseManagement/>}/>
+    <Route path="/updateCourse/:id" element={<UpdateCourse/>}/>
+    <Route path="/editCourse/:id" element={<EditCourse/>}/>
+    
+    
 
 
 </Routes>
