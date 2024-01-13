@@ -1,42 +1,4 @@
-// import axios from "axios";
-// const baseUrl = 'http://localhost:3000';
-// const studentbaseUrl = baseUrl;
 
-
-
-
-// const createaxiosInstance = (baseUrl) => {
-//     const instance = axios.create({
-//         baseUrl,
-//         timeout: 200000,
-//         timeoutErrorMessage: "sorry, req has been Timed Out!! please try again"
-
-
-//     })
-
-//     return instance;
-// }
-
-// const attachToken = (req, tokenName) => {
-//     let authToken = localStorage.getItem(tokenName)
-//     if (authToken) {
-//         req.headers.Authorization = `Bearer ${authToken}`
-//     }
-//     else {
-//         return req;
-//     }
-// }
-
-// export const studentaxiosInstance = createaxiosInstance(baseUrl);
-
-
-
-// // student request interceptors
-
-// studentaxiosInstance.interceptors.request.use(async (req) => {
-//     const modifiedreq = attachToken(req, 'usertoken')
-//     return modifiedreq;
-// })
 import axios from "axios";
 
 const baseURL = 'http://localhost:3000';
@@ -89,6 +51,11 @@ adminAxiosInstance.interceptors.request.use(async (req) => {
   const modifiedReq = attachToken(req, "adminToken");
   return modifiedReq;
 })
+
+
+
+
+
 
 
 

@@ -61,7 +61,7 @@ const StudentList=()=>{
         <>
         <div className="inset-0 flex items-center justify-center h-screen">
         </div>
-        <div className="w-full px-0 mx-0 mb-0  ml-12 pl-0">          
+        <div className="w-full px-0 mx-0 mb-0  ml-12 pl-0 pt-12 mt-5">          
         <div className="p-4   rounded-lg dark:border-gray-700">
             <div className="relative  shadow-md sm:rounded-lg">
               <div className="bg-slate-400">
@@ -247,7 +247,7 @@ const StudentList=()=>{
                                   data-modal-hide={`popup-modal-${data._id}`}
                                   type="button"
                                   onClick={() => {
-                                    console.log('Clicked student ID:', data._id); // Log the clicked student ID
+                                    console.log('Clicked category Id', data._id); // Log the clicked student ID
                                     blockUnblockStudent(data._id, data.isBlocked);
                                   }}
                                   

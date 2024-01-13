@@ -16,6 +16,7 @@ const InstructorsList=()=>{
         instroctorsList()
         .then((res)=>{
             setInstructor(res?.data?.instructors)
+            
         })
         .catch((error)=>{
             console.log(error.message);

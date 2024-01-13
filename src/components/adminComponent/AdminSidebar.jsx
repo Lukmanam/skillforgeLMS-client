@@ -31,14 +31,12 @@ const AdminSidebar = () => {
       <aside
         id="default-sidebar"
         className="fixed top-0 left-0 z-[1] w-64 h-screen transition-transform -translate-x-full sm:translate-x-0"
-                aria-label="Sidebar"
+        aria-label="Sidebar"
       >
-       
         <div className="h-full px-3 py-4 overflow-y-auto bg-gray-50 dark:bg-gray-800">
           {/* Sidebar items */}
-          
+
           <ul className="space-y-2 font-medium mt-12 pt-10 ">
-         
             <li>
               <Link
                 to="/admin/dashboard"
@@ -112,11 +110,49 @@ const AdminSidebar = () => {
                 <span className="ms-3">Categories</span>
               </Link>
             </li>
+            <li>
+              <Link
+                to="/admin/courseList"
+                className="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group"
+              >
+                <svg
+                  className="w-5 h-5 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white"
+                  aria-hidden="true"
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="currentColor"
+                  viewBox="0 0 22 21"
+                >
+                  <svg
+                    className="w-6 h-6 text-gray-800 dark:text-white"
+                    aria-hidden="true"
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 20 20"
+                  >
+                    <svg
+                      className="w-6 h-6 text-gray-800 dark:text-white"
+                      aria-hidden="true"
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 21 21"
+                    >
+                      <path
+                        stroke="currentColor"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth="2"
+                        d="m6.072 10.072 2 2 6-4m3.586 4.314.9-.9a2 2 0 0 0 0-2.828l-.9-.9a2 2 0 0 1-.586-1.414V5.072a2 2 0 0 0-2-2H13.8a2 2 0 0 1-1.414-.586l-.9-.9a2 2 0 0 0-2.828 0l-.9.9a2 2 0 0 1-1.414.586H5.072a2 2 0 0 0-2 2v1.272a2 2 0 0 1-.586 1.414l-.9.9a2 2 0 0 0 0 2.828l.9.9a2 2 0 0 1 .586 1.414v1.272a2 2 0 0 0 2 2h1.272a2 2 0 0 1 1.414.586l.9.9a2 2 0 0 0 2.828 0l.9-.9a2 2 0 0 1 1.414-.586h1.272a2 2 0 0 0 2-2V13.8a2 2 0 0 1 .586-1.414Z"
+                      />
+                    </svg>
+                  </svg>
+                </svg>
+
+                <span className="ms-3">Courses </span>
+              </Link>
+            </li>
           </ul>
         </div>
       </aside>
-
- 
     </>
   );
 };

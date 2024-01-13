@@ -3,6 +3,8 @@ import ReactDOM from 'react-dom/client'
 import App from './App.jsx'
 import { Provider } from 'react-redux'
 import {store,persistor} from "../src/reduxStore/store"
+import Modal from 'react-modal';
+
 import './index.css'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
@@ -11,4 +13,6 @@ ReactDOM.createRoot(document.getElementById('root')).render(
     <App />
     </Provider>
   </React.StrictMode>,
-)
+);
+
+Modal.setAppElement(root);
