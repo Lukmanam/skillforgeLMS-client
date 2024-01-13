@@ -7,6 +7,11 @@ import StudentForgotPassword from "../pages/studentPages/StudentForgotPassword";
 import StudentPublic from "./studentPrivate/StudentPublic";
 import StudentProtect from "./studentPrivate/StudentProtect";
 import ChangePassword from "../pages/studentPages/ChangePassword";
+import FavouriteCourses from "../components/studentComponent/FavouriteCourses";
+import CourseDetals from "../components/studentComponent/CourseDetals";
+import EnrolledCourses from "../components/studentComponent/EnrolledCourses";
+
+
 
 
 const StudentRoute=()=>{
@@ -20,7 +25,10 @@ const StudentRoute=()=>{
         <Route path="/otp" element={<StudentOtp/>}/>
         <Route path="/stforgotPassword" element={<StudentForgotPassword/>}></Route>
         <Route path="/changepassword" element={<ChangePassword/>}></Route>
-
+        <Route path="/favouriteCourses" element={<FavouriteCourses/>}/>
+        <Route path="/CourseDetails/:courseId" element={<CourseDetals/>}></Route>
+        <Route path="/enrolledCourses"element={<EnrolledCourses/>}/>
+      
         
         </Routes>
 

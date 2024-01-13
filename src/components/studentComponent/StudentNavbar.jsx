@@ -1,17 +1,34 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useDispatch,useSelector } from "react-redux";
 import { useNavigate,Link } from "react-router-dom";
 import {toast} from "react-toastify";
-import {studentLogout} from "../../reduxStore/slices/studentslice"
+import {studentLogout} from "../../reduxStore/slices/studentslice";
+import { allcategories } from "../../../api/studentApi";
+
 
 const StudentNavbar = () => {
   const [isDropdownOpen,setDropdownOpen]=useState(false);
+  const [categories,setCategories]=useState(null);
+
+
   const dispatch=useDispatch();
   const navigate=useNavigate();
-
   const toggleDropdown=()=>{
     setDropdownOpen(!isDropdownOpen)
   }
+
+  useEffect(()=>{
+    console.log("catse");
+    allcategories().then((res)=>{
+      setCategories(res?.data?.categories)
+}).catch((error)=>{
+  console.log(error);
+    })
+  },[])
+
+  console.log(categories,"category in Page");
+
+
   const{student}=useSelector((state)=>state.studentReducer);
   const handleLogout=async()=>{
     console.log("Logging out Student");
@@ -33,17 +50,28 @@ const StudentNavbar = () => {
         {/* Navigation */}
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1 ml-10">
-            <li ><a className="ml-12 pl-10 "><b>Home</b></a></li>
+           <Link to='/'> <li ><a className="ml-12 pl-10 "><b>Home</b></a></li></Link>
             <li>
               <details className="ml-12 ">
                 <summary><a className="pl-5 pr-5"><b>Learn</b></a></summary>
                 <ul className="">
-                  <li ><a>Technology</a></li>
-                  <li><a>Science </a></li>
+                {categories &&
+                  categories.length > 0 ? (
+                    categories.map((data)=>
+                  <li ><a>{data.name}</a></li>)
+                  ) 
+                    :(<li>Category Not Available</li>)
+                  
+                 
+                  // Loading state or something else while categories are being fetched
+                }
                 </ul>
+              
               </details>
             </li>
+            <Link to={'/enrolledCourses'}>
             <li  className="ml-12  pl-1"><a><b>MyCourses</b></a></li>
+            </Link>
           </ul>
         </div>
   
@@ -60,13 +88,19 @@ const StudentNavbar = () => {
       <ul tabIndex={0} className="mt-3 z-[1] p-2 shadow menu menu-sm dropdown-content bg-base-100 rounded-box w-52">
         {student ? (
           <>
-          <li>
-          <a className="justify-between">
-            Profile
-            <span className="badge">New</span>
-          </a>
+         
+            <li>
+            <li>Profile</li>
         </li>
-        <li><a>Settings</a></li>
+       
+
+         <Link to="/favouriteCourses"  className="justify-between ">
+            <li>
+            <li>Saved Courses</li>
+        </li>
+          </Link>
+
+     
         <li><a onClick={handleLogout}><b>Logout</b></a></li>
           </>
         ):(

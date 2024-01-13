@@ -5,7 +5,7 @@ import { addtoFavCourses } from "../../../api/studentApi";
 import { favouriteStatus } from "../../../api/studentApi";
 import { Link } from "react-router-dom";
 
-const CourseCard = ({ value }) => {
+const CourseCardEnrolled = ({ value }) => {
   const [favourite, setFavourite] = useState(false);
   const { student } = useSelector((state) => state.studentReducer);
 
@@ -14,39 +14,39 @@ const CourseCard = ({ value }) => {
     const courseId = value?._id;
     console.log(studentId, "student Id in useEffect");
     console.log(courseId, "course Id in useEffect");
-    favouriteStatus(courseId, studentId)
-      .then((res) =>{ setFavourite(res?.data?.favorite);
-        console.log(res?.data?.favorite);
+    // favouriteStatus(courseId, studentId)
+    //   .then((res) =>{ setFavourite(res?.data?.favorite);
+    //     console.log(res?.data?.favorite);
     
-    } )
-      .catch((error) => {
-        console.log(error);
-      });
+    // } )
+    //   .catch((error) => {
+    //     console.log(error);
+    //   });
   });
 
-  const addremoveFavourite = async (courseId) => {
-    const studentId = student._id;
-    const res = await addtoFavCourses(courseId, studentId);
-    if (res.status === 200) {
-      toast.success(res?.data?.message);
-      setFavourite(false);
-    } else if (res.status === 201) {
-      toast.success(res?.data?.message);
-      setFavourite(true);
-    }
-  };
+  // const addremoveFavourite = async (courseId) => {
+  //   const studentId = student._id;
+  //   const res = await addtoFavCourses(courseId, studentId);
+  //   if (res.status === 200) {
+  //     toast.success(res?.data?.message);
+  //     setFavourite(false);
+  //   } else if (res.status === 201) {
+  //     toast.success(res?.data?.message);
+  //     setFavourite(true);
+  //   }
+  // };
 
   return (
     <div className="course-card bg-white rounded-lg shadow-md overflow-hidden relative">
-            <Link to={`/CourseDetails/${value._id}`} >
+            {/* <Link to={`/CourseDetails/${value._id}`} > */}
 
       <img
-        src={value?.thumbnail}
+        src={value?.courseId?.thumbnail}
         alt="Course"
         className="w-full h-40 object-cover"
       />
       <div className="p-4">
-        <h2 className="text-lg font-semibold mb-2">{value?.courseName}</h2>
+        <h2 className="text-lg font-semibold mb-2">{value?.courseId?.courseName}</h2>
         <div className="flex pt-6">
           <img
             className="w-10 h-10 p-1ring-2 ring-gray-300 dark:ring-gray-500"
@@ -54,18 +54,18 @@ const CourseCard = ({ value }) => {
             alt="Bordered avatar"
           />
           <p className="text-sm text-gray-500 mt-4">
-            <b> {value?.instructorId?.name}</b>
+            <b> {value?.courseId?.instructorId?.name}</b>
           </p>
         </div>
       </div>
-      </Link>
+      {/* </Link> */}
       <div className="absolute bottom-4 right-4 flex items-center">
         <div className="flex items-center mr-2">
           {/* ... */}
 
           {/* .. */}
         </div>
-        {favourite === true ? (
+        {/* {favourite === true ? (
           <button
             className="ml-auto"
             onClick={() => addremoveFavourite(value._id)}
@@ -101,10 +101,10 @@ const CourseCard = ({ value }) => {
               />
             </svg>
           </button>
-        )}
+        )} */}
       </div>
     </div>
   );
 };
 
-export default CourseCard;
+export default CourseCardEnrolled;

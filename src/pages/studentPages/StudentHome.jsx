@@ -3,6 +3,7 @@ import StudentNavbar from "../../components/studentComponent/studentNavbar";
 import Banner from "../../components/studentComponent/Banner";
 import CourseList from "../../components/studentComponent/courseListComponent";
 
+
 const StudentHome=()=>{
     return(
         <>
