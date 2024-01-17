@@ -126,4 +126,10 @@ export const fetchEnrolledCourse=async(studentId)=>{
   return data;
 }
 
+export const editStudentProfile=async(studentId,values)=>{
+  console.log("in api",values);
+const data=await studentaxiosInstance.post('/editStudentProfile',{studentId,values})
+return data
+}
+
 

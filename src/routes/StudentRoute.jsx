@@ -10,6 +10,7 @@ import ChangePassword from "../pages/studentPages/ChangePassword";
 import FavouriteCourses from "../components/studentComponent/FavouriteCourses";
 import CourseDetals from "../components/studentComponent/CourseDetals";
 import EnrolledCourses from "../components/studentComponent/EnrolledCourses";
+import StudentProfile from "../components/studentComponent/StudentProfile";
 
 
 
@@ -28,6 +29,7 @@ const StudentRoute=()=>{
         <Route path="/favouriteCourses" element={<FavouriteCourses/>}/>
         <Route path="/CourseDetails/:courseId" element={<CourseDetals/>}></Route>
         <Route path="/enrolledCourses"element={<EnrolledCourses/>}/>
+        <Route path="/studentProfile" element={<StudentProfile/>}/>
       
         
         </Routes>

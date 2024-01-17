@@ -89,9 +89,11 @@ const StudentNavbar = () => {
         {student ? (
           <>
          
+         <Link to='/studentProfile'>
             <li>
             <li>Profile</li>
         </li>
+        </Link>
        
 
          <Link to="/favouriteCourses"  className="justify-between ">
