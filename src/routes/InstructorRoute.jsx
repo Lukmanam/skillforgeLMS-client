@@ -9,6 +9,7 @@ import InChangePassword from "../pages/instructorPages/InChangePassword";
 import CourseManagement from "../pages/instructorPages/CourseManagementPage";
 import UpdateCourse from "../pages/instructorPages/UpdateCourse";
 import EditCourse from "../components/instructorComponent/EditCourse";
+import InstructorProfile from "../components/instructorComponent/InstructorProfile";
 
 
 
@@ -25,6 +26,8 @@ return(
     <Route path="/courseManagement" element={<CourseManagement/>}/>
     <Route path="/updateCourse/:id" element={<UpdateCourse/>}/>
     <Route path="/editCourse/:id" element={<EditCourse/>}/>
+    <Route path="/Profile" element={<InstructorProfile/>}/>
+    
     
     
 

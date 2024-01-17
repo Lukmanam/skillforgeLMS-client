@@ -129,3 +129,9 @@ export const editCourseapi=async(editCoursedata)=>{
         const data = await instructoraxiosInstance.patch('/editCourse', { ...editCoursedata });
         return data;
 }
+
+export const editProfileData=async(values,instructorId)=>{
+        console.log("values in API",values);
+        const data=await instructoraxiosInstance.post('/profileData',{...values,instructorId});
+        return data;
+}

@@ -3,7 +3,6 @@ import { useDispatch, useSelector } from "react-redux";
 import { useNavigate, Link } from "react-router-dom";
 import { toast } from "react-toastify";
 import { instructorLogout } from "../../reduxStore/slices/instructorSlice";
-import AddNewCourse from "./AddNewCourse";
 import AddCourse from "./AddCourse";
 import Modal from "react-modal";
 // import { Modal } from "flowbite";
@@ -25,9 +24,6 @@ const InstructorNavbar = () => {
   };
 
   const { instructor } = useSelector((state) => state.instructorReducer);
-
-  console.log(instructor, "fsdgvgsczz");
-
   const handleLogout = async () => {
     console.log("Logging out Instructor");
     localStorage.removeItem("instructorToken");
@@ -149,10 +145,10 @@ const InstructorNavbar = () => {
             ) : (
               <>
                 <li>
-                  <a className="justify-between">
+                 <Link to='/instructor/Profile'>
                     Profile
                     <span className="badge">New</span>
-                  </a>
+                    </Link>
                 </li>
                 <li>
                   <a>Settings</a>
