@@ -37,22 +37,22 @@ console.log(instructorId);
       {loading ? (
         <>loading</>
       ) : (
-        <div className="container p-3 mt-12 mb-10">
+        <div className="w-screen h-full p-3  bg-slate-200">
           <b>Your Top Rated Courses</b>
-          <div className="course-list flex flex-wrap space-x-4 p-4 mb-5">
+          <div className="course-list flex flex-wrap justify-center mx-auto mb-6">
             {course.map((data) => (
               <InstructorCourseCard key={data._id} value={data} />
             ))}
           </div>
-          <div className="container p-3 mt-8">
+       
             <b>Latest Uploaded</b>
-            <div className="course-list flex flex-wrap space-x-4 p-4 mb-10">
+            <div className="course-list flex flex-wrap justify-center mx-auto  mb-5 ">
               {course.map((data) => (
                 <InstructorCourseCard key={data._id} value={data} />
               ))}
             </div>
           </div>
-        </div>
+     
       )}
     </>
        

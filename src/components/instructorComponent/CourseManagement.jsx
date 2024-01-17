@@ -54,7 +54,7 @@ const closeModal = () => {
   return (
     <>
    
-    <div className="w-4/4 px-0 mx-0 mb-0 items-center ml-12 pl-0 pt-12 m-10">          
+    <div className="w-auto px-0 mx-0 mb-0 items-center ml-12 pl-0  m-10">          
     <div className="p-4   rounded-lg dark:border-gray-700">
         <div className="relative  shadow-md sm:rounded-lg">
           <div className="bg-slate-400">
