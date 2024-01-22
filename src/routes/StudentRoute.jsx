@@ -11,6 +11,9 @@ import FavouriteCourses from "../components/studentComponent/FavouriteCourses";
 import CourseDetals from "../components/studentComponent/CourseDetals";
 import EnrolledCourses from "../components/studentComponent/EnrolledCourses";
 import StudentProfile from "../components/studentComponent/StudentProfile";
+import AllCourse from "../pages/studentPages/AllCourse";
+import EnrollSuccess from "../components/studentComponent/EnrollSuccess";
+import LearningPage from "../pages/studentPages/LearningPage";
 
 
 
@@ -30,6 +33,9 @@ const StudentRoute=()=>{
         <Route path="/CourseDetails/:courseId" element={<CourseDetals/>}></Route>
         <Route path="/enrolledCourses"element={<EnrolledCourses/>}/>
         <Route path="/studentProfile" element={<StudentProfile/>}/>
+        <Route path="/courses" element={<AllCourse/>}/>
+        <Route path="/enrollSuccess/:courseId" element={<EnrollSuccess/>}/>
+        <Route path="/learn/:courseId" element={<LearningPage/>}/>
       
         
         </Routes>

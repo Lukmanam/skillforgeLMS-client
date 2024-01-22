@@ -13,6 +13,7 @@ import InstructorProfile from "../components/instructorComponent/InstructorProfi
 
 
 
+
 const InstructorRoute=()=>{
 return(
 <Routes>
@@ -27,6 +28,7 @@ return(
     <Route path="/updateCourse/:id" element={<UpdateCourse/>}/>
     <Route path="/editCourse/:id" element={<EditCourse/>}/>
     <Route path="/Profile" element={<InstructorProfile/>}/>
+    
     
     
     

@@ -20,12 +20,11 @@ const InstructorProfile = () => {
 
   async function onSubmit(values) {
     try {
-      console.log(values, "values fort edit");
+     
       const res = await editProfileData(values, instructorId);
       console.log(res.data, "this is response");
       if (res.status == 200) {
-        setProfile(res.data.profileDetails);
-        console.log(profile);
+     
         setEdit(false);
         const { updatedInstructor } = res.data;
         console.log("this is instructor", updatedInstructor);
