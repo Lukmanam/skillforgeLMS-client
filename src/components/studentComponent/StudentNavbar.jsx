@@ -50,7 +50,8 @@ const StudentNavbar = () => {
         {/* Navigation */}
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1 ml-10">
-           <Link to='/'> <li ><a className="ml-12 pl-10 "><b>Home</b></a></li></Link>
+           <Link to='/'> <li ><a className="ml-12 "><b>Home</b></a></li></Link>
+           <Link to='/courses'> <li ><a className="ml-12  "><b>Courses</b></a></li></Link>
             <li>
               <details className="ml-12 ">
                 <summary><a className="pl-5 pr-5"><b>Learn</b></a></summary>

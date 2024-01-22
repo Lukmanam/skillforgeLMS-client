@@ -30,8 +30,8 @@ const EnrolledCourses = () => {
   return (
     <>
       <StudentNavbar />
-      <div className="course-list flex space-x-4 p-4">
-        <div className="course-list flex flex-wrap space-x-4 p-4 mb-5">
+      <div className="lg:w-screen bg-slate-300 h-screen items-center justify-center  p-4">       
+       <div className="course-list flex flex-wrap items-center p-4 mb-5">
           {enrolledCourses && enrolledCourses.length > 0 ? (
             enrolledCourses.map((data) => <CourseCardEnrolled key={data._id} value={data} />)
           ) : (

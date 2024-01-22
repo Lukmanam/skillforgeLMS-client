@@ -27,109 +27,138 @@ export const studentResendOtp = async (studentEmail) => {
 
 
 
-export const studentLoginVerify=async(loginData)=>
-{
+export const studentLoginVerify = async (loginData) => {
   console.log("in student Api");
-  const Data=await studentaxiosInstance.post('/login',loginData)
+  const Data = await studentaxiosInstance.post('/login', loginData)
   return Data
 }
 
 
 // Mail verification
 
-export const studentforgotpassword=async(email)=>{
-  const Data=await studentaxiosInstance.post('/studentforgetpassword',email)
+export const studentforgotpassword = async (email) => {
+  const Data = await studentaxiosInstance.post('/studentforgetpassword', email)
   return Data
 }
 
 
-export const studentChangePassword=async(values)=>{
+export const studentChangePassword = async (values) => {
   try {
-    console.log({...values},"vaaaak")
-    const Data=await studentaxiosInstance.post('/studentChangePassword',{...values})
+    console.log({ ...values }, "vaaaak")
+    const Data = await studentaxiosInstance.post('/studentChangePassword', { ...values })
     console.log("this is data");
     return Data
   }
-  catch(error){
-    console.log(error,"api ile error");
+  catch (error) {
+    console.log(error, "api ile error");
   }
 }
 
-export const googleAuth=async(userData)=>{
-  console.log(userData,"User data here In API");
-  const data= await studentaxiosInstance.post('/googleSignin',userData)
+export const googleAuth = async (userData) => {
+  console.log(userData, "User data here In API");
+  const data = await studentaxiosInstance.post('/googleSignin', userData)
   return data
 }
 
-export const allcategories=async()=>{
+export const allcategories = async () => {
   console.log("in category fetch Api");
-  const data=await studentaxiosInstance.get("/allCategories");
+  const data = await studentaxiosInstance.get("/allCategories");
   console.log(data);
   return data
 }
 
-export const fetchAllCourses=async()=>{
-  const data= await studentaxiosInstance.get("/fetchAllCourses");
+export const fetchAllCourses = async () => {
+  const data = await studentaxiosInstance.get("/fetchAllCourses");
   return data;
 }
-export const addtoFavCourses=async(courseId,studentId)=>{
-try {
-  console.log("in api favourite Courses",courseId,studentId);
-  const data=await studentaxiosInstance.post('/addtoFavourite',{courseId,studentId});
-  return data;
-  
-} catch (error) {
-  console.log(error);
-}
+export const addtoFavCourses = async (courseId, studentId) => {
+  try {
+    console.log("in api favourite Courses", courseId, studentId);
+    const data = await studentaxiosInstance.post('/addtoFavourite', { courseId, studentId });
+    return data;
+
+  } catch (error) {
+    console.log(error);
+  }
 }
 
-export const favouriteStatus=async(courseId,studentId)=>{
-  console.log(courseId,studentId,"in api for favourirwe");
-  
-  const data=await studentaxiosInstance.post('/checkFavouriteStatus',{courseId,studentId});
+export const allCourselist = async () => {
+  const data = await studentaxiosInstance.get('/allCourselist');
+  return data;
+}
+
+export const listCategories = async () => {
+  const data = await studentaxiosInstance.get('/allCategoriesList');
+  return data;
+}
+
+export const favouriteStatus = async (courseId, studentId) => {
+  console.log(courseId, studentId, "in api for favourirwe");
+
+  const data = await studentaxiosInstance.post('/checkFavouriteStatus', { courseId, studentId });
   console.log(data);
   return data;
 }
 
-export const fetchFavouriteCourses=async(studentId)=>{
-  const data=await studentaxiosInstance.get(`/fetchFavouriteCourses/${studentId}`);
+export const fetchFavouriteCourses = async (studentId) => {
+  const data = await studentaxiosInstance.get(`/fetchFavouriteCourses/${studentId}`);
   return data;
 }
 
 
-export const fetchCourseData=async(courseId)=>{
+export const fetchCourseData = async (courseId) => {
   console.log("In student Api for fetching courseData");
-  const data=await studentaxiosInstance.get(`/fetchCourseData/${courseId}`)
+  const data = await studentaxiosInstance.get(`/fetchCourseData/${courseId}`)
   return data
 }
 
 
 // CourseEnrollment
 
-export const enrollToCourse=async(courseId,studentId)=>{
+export const enrollToCourse = async (courseId, studentId) => {
   console.log("in Api to enrolment");
-  console.log(courseId,"this is courseId");
-  console.log(studentId,"this is student id");
-  const data=await studentaxiosInstance.post('/enrolltoCourse',{studentId,courseId})
+  console.log(courseId, "this is courseId");
+  console.log(studentId, "this is student id");
+  const data = await studentaxiosInstance.post('/enrolltoCourse', { studentId, courseId })
   return data
 }
 
-export const checkforEnrollment=async(studentId,courseId)=>{
-  console.log(studentId,"student",courseId,"course");
-  const data=await studentaxiosInstance.post('/checkEnrollment',{studentId,courseId});
+export const checkforEnrollment = async (studentId, courseId) => {
+  console.log(studentId, "student", courseId, "course");
+  const data = await studentaxiosInstance.post('/checkEnrollment', { studentId, courseId });
   return data
 }
 
-export const fetchEnrolledCourse=async(studentId)=>{
-  console.log(studentId,"student Id to fetch saved Courses in api");
-  const data=await studentaxiosInstance.get(`/enrolledCourse/${studentId}`)
+export const fetchEnrolledCourse = async (studentId) => {
+  console.log(studentId, "student Id to fetch saved Courses in api");
+  const data = await studentaxiosInstance.get(`/enrolledCourse/${studentId}`)
   return data;
 }
 
-export const editStudentProfile=async(studentId,values)=>{
-  console.log("in api",values);
-const data=await studentaxiosInstance.post('/editStudentProfile',{studentId,values})
-return data
+export const editStudentProfile = async (studentId, values) => {
+  console.log("in api", values);
+  const data = await studentaxiosInstance.post('/editStudentProfile', { studentId, values })
+  return data
 }
+
+export const paymentApi = async (courseData,student) => {
+  try {
+    console.log("in payment Api", courseData);
+    console.log(student,"this is student in api");
+  
+      const data =  studentaxiosInstance.post('/paymentCheckoutSesion', {courseData,student});
+      console.log(data, "api data");
+      return data;
+   
+
+  } catch (error) {
+    console.log("api Error", error);
+  }
+}
+
+
+
+export const courseLearn=
+
 
 

@@ -2,12 +2,14 @@ import React, { useEffect, useState } from "react";
 import { Link, useNavigate, useParams } from "react-router-dom";
 import { Navigate } from "react-router-dom";
 import { toast } from "react-toastify";
-import { fetchCourseData } from "../../../api/studentApi";
 import ReactPlayer from "react-player";
 import { useSelector } from "react-redux";
+import {loadStripe} from '@stripe/stripe-js';
 import { enrollToCourse } from "../../../api/studentApi";
-import { checkforEnrollment } from "../../../api/studentApi";
+import { fetchCourseData } from "../../../api/studentApi";
 import StudentNavbar from "./StudentNavbar";
+import { checkforEnrollment } from "../../../api/studentApi";
+import { paymentApi } from "../../../api/studentApi";
 
 const CourseDetals = () => {
   const [loading, setLoading] = useState(true);
@@ -62,6 +64,30 @@ const CourseDetals = () => {
     }
   };
 
+
+
+  const makePayment=async()=>{
+    
+try {
+  console.log("haaaaaaaaaai in payment");
+  const stripe= await loadStripe("pk_test_51OFr1pSB3NLla9eMkflIN058py6nnlYYZaTplPo90zwVxeuGbKgykFCllNFwZ3sUPSJILtGufMQFnXDkFlzNMK6d00cnKRlbN6")
+  console.log(stripe,"this is stripe");
+  const res=await paymentApi(courseData[0],student);
+  console.log(res,"this is response");
+  const sessionId=await res.data.id
+  const result=stripe.redirectToCheckout({
+    sessionId:sessionId
+  });
+
+  if(result.error){
+    console.log(error);
+  }
+} catch (error) {
+  console.log(error);
+  
+}  
+    }
+
   const openModal = (courseId) => {
     setActiveModal(courseId);
   };
@@ -71,7 +97,7 @@ const CourseDetals = () => {
   };
 
   console.log(courseData, "module");
-  //   console.log(courseData[0]?.modules[0].module.video_url, "name");
+ 
   return (
     <div>
       <>
@@ -192,7 +218,7 @@ const CourseDetals = () => {
                               <i className="fas fa-check-circle mr-2" />
                               Enrolled
                             </button>
-                          ) : (
+                          ) : courseData[0]?.price === 0 ? (
                             <button
                               type="button"
                               onClick={() => openModal(courseData[0]._id)}
@@ -200,6 +226,17 @@ const CourseDetals = () => {
                             >
                               <i class="fas fa-user-plus mr-2"></i>
                               Enroll Now For Free
+                            </button>
+                          ) : (
+                            <button
+                              type="button"
+                              onClick={() => {
+                                makePayment()
+                              }}
+                              class="bg-teal-600 border border-gray-400 text-sm text-white text-center font-semibold p-3 rounded-md hover:bg-white hover:text-black"
+                            >
+                              <i class="fas fa-user-plus mr-2"></i>
+                              Enroll Now
                             </button>
                           )}
 

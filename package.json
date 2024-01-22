@@ -13,6 +13,7 @@
   "dependencies": {
     "@reduxjs/toolkit": "^2.0.1",
     "@rollup/rollup-win32-x64-msvc": "^4.5.2",
+    "@stripe/stripe-js": "^2.3.0",
     "axios": "^1.6.2",
     "firebase": "^10.7.1",
     "flowbite": "^2.2.1",

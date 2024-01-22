@@ -37,33 +37,30 @@ const CourseCard = ({ value }) => {
   };
 
   return (
-    <div className="course-card bg-white rounded-lg shadow-md overflow-hidden relative">
+    <div className="course-card bg-white rounded-lg outline-double outline-slate-500 shadow-lg overflow-hidden m-2  h-auto w-60">
             <Link to={`/CourseDetails/${value._id}`} >
 
       <img
         src={value?.thumbnail}
         alt="Course"
-        className="w-full h-40 object-cover"
+        className="w-full h-auto object-fitr"
       />
-      <div className="p-4">
-        <h2 className="text-lg font-semibold mb-2">{value?.courseName}</h2>
-        <div className="flex pt-6">
+      <div className="p-2">
+        <h2 className="text-sm font-semibold mb-2">{value?.courseName}</h2>
+        <div className="flex">
           <img
-            className="w-10 h-10 p-1ring-2 ring-gray-300 dark:ring-gray-500"
+            className="w-5 h-5  "
             src="https://thumbs.dreamstime.com/b/teacher-icon-vector-male-person-profile-avatar-book-teaching-school-college-university-education-glyph-113754458.jpg"
             alt="Bordered avatar"
           />
-          <p className="text-sm text-gray-500 mt-4">
+          <p className="text-xs text-gray-500 ">
             <b> {value?.instructorId?.name}</b>
           </p>
         </div>
       </div>
       </Link>
-      <div className="absolute bottom-4 right-4 flex items-center">
-        <div className="flex items-center mr-2">
-          {/* ... */}
-
-          {/* .. */}
+      <div className="flex items-center">
+        <div className="flex items-center">
         </div>
         {favourite === true ? (
           <button
@@ -74,7 +71,7 @@ const CourseCard = ({ value }) => {
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 24 24"
               fill="red"
-              className="w-6 h-6"
+              className="w-5 h-5"
             >
               <path
                 fillRule="evenodd"
@@ -92,7 +89,7 @@ const CourseCard = ({ value }) => {
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 24 24"
               fill="currentColor"
-              className="w-6 h-6"
+              className="w-5 h-5 m-2"
             >
               <path
                 fillRule="evenodd"
