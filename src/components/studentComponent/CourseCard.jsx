@@ -28,16 +28,14 @@ const CourseCard = ({ value }) => {
     const studentId = student._id;
     const res = await addtoFavCourses(courseId, studentId);
     if (res.status === 200) {
-      toast.success(res?.data?.message);
-      setFavourite(false);
+      setFavourite(res?.data?.status);
     } else if (res.status === 201) {
-      toast.success(res?.data?.message);
-      setFavourite(true);
+      setFavourite(res?.data?.status);
     }
   };
 
   return (
-    <div className="course-card bg-white rounded-lg outline-double outline-slate-500 shadow-lg overflow-hidden m-2  h-auto w-60">
+    <div className="course-card bg-white rounded-lg  outline-slate-500 shadow-lg overflow-hidden m-2  h-auto w-72">
             <Link to={`/CourseDetails/${value._id}`} >
 
       <img
@@ -71,7 +69,7 @@ const CourseCard = ({ value }) => {
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 24 24"
               fill="red"
-              className="w-5 h-5"
+              className="w-5 h-5 m-2"
             >
               <path
                 fillRule="evenodd"

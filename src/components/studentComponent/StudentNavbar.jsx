@@ -18,7 +18,7 @@ const StudentNavbar = () => {
   }
 
   useEffect(()=>{
-    console.log("catse");
+   
     allcategories().then((res)=>{
       setCategories(res?.data?.categories)
 }).catch((error)=>{
@@ -26,7 +26,7 @@ const StudentNavbar = () => {
     })
   },[])
 
-  console.log(categories,"category in Page");
+
 
 
   const{student}=useSelector((state)=>state.studentReducer);

@@ -61,9 +61,7 @@ export const googleAuth = async (userData) => {
 }
 
 export const allcategories = async () => {
-  console.log("in category fetch Api");
   const data = await studentaxiosInstance.get("/allCategories");
-  console.log(data);
   return data
 }
 
@@ -158,7 +156,65 @@ export const paymentApi = async (courseData,student) => {
 
 
 
-export const courseLearn=
+export const courseLearn=async(courseId)=>{
+  console.log("fetching data from api");
+  const data=await studentaxiosInstance.get(`/learnCourse/${courseId}`);
+  console.log(data,"Course Learining data");
+  return data;
+}
 
 
+export const saveCourseProgression=async(courseId,studentId,moduleId)=>{
+  console.log("data passing to save course Progrtess");
+  const data=await studentaxiosInstance.post('/saveCourseProgress',{courseId,studentId,moduleId});
+  return data
+}
+
+
+
+export const alreadyCompletedModules = async (courseId, studentId) => {
+  try {
+    const data = await studentaxiosInstance.get('/alreadyCompletedModules', {
+      params: {
+        courseId: courseId,
+        studentId: studentId,
+      }})
+      return data
+    
+  } catch (error) {
+    console.log(error);
+    
+  }
+}
+
+export const rateCourse=async(rated,courseId,studentId)=>{
+
+  const data=await studentaxiosInstance.post('/rateCourse',{rated,courseId,studentId});
+  return data;
+}
+
+export const alreadyRated=async(courseId,studentId)=>{
+  try {
+    
+    console.log("in Api", courseId,"helo courseId",studentId,"Student Id for checking ");
+    const data=await studentaxiosInstance.get('/checkratingStatus',{
+      params:{
+        courseId: courseId,
+        studentId: studentId,
+      }
+    })
+  
+    return data;
+  } catch (error) {
+
+    console.log(error);
+    
+  }
+}
+
+
+export const fetchCourseRating=async(courseId)=>{
+  const data=await studentaxiosInstance.get(`/fetchCourseRating/${courseId}`);
+  return data;
+}
 

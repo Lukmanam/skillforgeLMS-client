@@ -11,6 +11,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@material-tailwind/react": "^2.1.8",
     "@reduxjs/toolkit": "^2.0.1",
     "@rollup/rollup-win32-x64-msvc": "^4.5.2",
     "@stripe/stripe-js": "^2.3.0",
