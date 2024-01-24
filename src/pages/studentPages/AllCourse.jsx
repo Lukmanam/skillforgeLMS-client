@@ -46,7 +46,7 @@ const AllCourse = () => {
 </div>
 <div className="flex flex-col lg:flex-row">
       {/* Left-sided category filter */}
-      <div className="lg:w-1/4 bg-slate-200  p-4">
+      <div className="lg:w-1/5 bg-slate-200  p-4">
       <ul class="list">
         <li> <div className=' btn w-full rounded-lg bg-black text-white p-4 '> All Courses</div></li>
         <ul className="">
@@ -68,8 +68,8 @@ const AllCourse = () => {
       </div>
 
       {/* Listing all courses in the rest of the space */}
-      <div className="lg:w-3/4 bg-slate-300 h-full  p-4">
-      <div className="course-list flex space-x-4 p-4">
+      <div className="lg:w-4/5 bg-slate-300 h-full  p-4">
+      <div className="course-list flex space-x-4 p-5  ">
         <div className="course-list   flex flex-wrap  mx-auto mb-6">
           {courses && courses.length > 0 ? (
             courses.map((data) => <CourseCard key={data._id} value={data} />)
