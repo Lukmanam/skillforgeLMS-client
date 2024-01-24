@@ -1,26 +1,43 @@
 import React, { useEffect, useState } from "react";
 import { toast } from "react-toastify";
 import { useSelector } from "react-redux";
-import { addtoFavCourses } from "../../../api/studentApi";
-import { favouriteStatus } from "../../../api/studentApi";
+import { Progress } from "@material-tailwind/react";
+
 import { Link } from "react-router-dom";
 
 const CourseCardEnrolled = ({ value }) => {
-  const [favourite, setFavourite] = useState(false);
   const { student } = useSelector((state) => state.studentReducer);
 
   useEffect(() => {
+    console.log(value,"vakue daaaaaaaaaaaaaaataaaaaaaaa");
     const studentId = student?._id;
     const courseId = value?._id;
+   
+    
+
     console.log(studentId, "student Id in useEffect");
     console.log(courseId, "course Id in useEffect");
     
   });
+  const progressValue=value?.Progress?.length;
+    const modulescount=value?.courseId?.modules?.length;
+
+    console.log(modulescount,"Modules Count");
+    console.log(progressValue,"no of modules Completed");
+
+  const progressPercent=Math.floor((progressValue/modulescount)*100);
+
+
+
+  
+
+
+
 
   return (
     
     <div className=" bg-white rounded-lg outline-double outline-slate-500 shadow-lg overflow-hidden m-2  h-auto w-60">
-            <Link to={`/CourseDetails/${value._id}`} >
+            <Link to={`/learn/${value?.courseId._id}`} >
 
       <img
         src={value?.courseId?.thumbnail}
@@ -40,6 +57,9 @@ const CourseCardEnrolled = ({ value }) => {
           </p>
         </div>
       </div>
+      <div className="flex w-full flex-col p-4">
+      <Progress value={progressPercent} size="sm" label=" " className="outline outline-1 mx-auto   bg-cyan-700 text-slate-200" />
+    </div>
       </Link>
       <div className="absolute bottom-4 right-4 flex items-center">
         <div className="flex items-center mr-2">

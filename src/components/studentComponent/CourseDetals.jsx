@@ -10,6 +10,8 @@ import { fetchCourseData } from "../../../api/studentApi";
 import StudentNavbar from "./StudentNavbar";
 import { checkforEnrollment } from "../../../api/studentApi";
 import { paymentApi } from "../../../api/studentApi";
+import RatingComponent from "./RatingComponent";
+import ShowRating from "./showRating";
 
 const CourseDetals = () => {
   const [loading, setLoading] = useState(true);
@@ -198,8 +200,8 @@ try {
                             </p>
                           ) : (
                             <p className="text-gray-400 font-mono text-md font-thin">
-                              <i class="fas fa-rupee-sign mr-2 text-gray-200"></i>
-                              $ {courseData[0]?.price}
+                              <i class="fas fa-rupee-sign mr-2 text-slate-200"></i>
+                              ₹ {courseData[0]?.price}
                             </p>
                           )}
                         </div>
@@ -227,6 +229,7 @@ try {
                               <i class="fas fa-user-plus mr-2"></i>
                               Enroll Now For Free
                             </button>
+                            
                           ) : (
                             <button
                               type="button"
@@ -239,7 +242,6 @@ try {
                               Enroll Now
                             </button>
                           )}
-
                           <div
                             id={`popup-modal-${courseData[0]._id}`}
                             tabIndex={-1}
@@ -319,6 +321,16 @@ try {
                         </div>
                       </div>
                     </div>
+                    {enrolledCourse ? (
+                                <div className="rating grid w-100 h-30 mt-5"> <RatingComponent courseId={courseData[0]._id}/></div>
+                          ) :  (
+                            <div className="rating grid w-100 h-30 mt-5"> <ShowRating courseId={courseData[0]._id}/></div>
+                            
+                          ) 
+                          }
+
+          
+
                   </div>
                 </div>
               </div>
