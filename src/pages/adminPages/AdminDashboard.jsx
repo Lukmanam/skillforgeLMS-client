@@ -3,16 +3,23 @@ import AdminNavbar from "../../components/adminComponent/AdminNavbar";
 import AdminSidebar from "../../components/adminComponent/AdminSidebar";
 import Dashboardadmin from "../../components/adminComponent/Dashboardpart";
 
-const AdminDashboard=()=>{
-    return(
-    <div className="flex h-screen">
-    <AdminNavbar className="w-1/5"/>
-    <div className="w-3/5 overflow-y-auto" >
-    <Dashboardadmin/>
-    </div>
-    <AdminSidebar className="w-1/5"/>       
-    </div>
-    )
-}
+const AdminDashboard = () => {
+  return (
+    <>
+     <div className="h-16 w-full">
+  <AdminNavbar className="w-full md:w-1/5" />
+</div>
+<div className="flex flex-col md:flex-row w-full h-screen">
+  <div className="w-full md:w-1/6 h-auto">
+    <AdminSidebar className="w-full md:w-1/5" />
+  </div>
+  <div className="w-full md:w-5/6 h-screen bg-slate-700 ml-1">
+    <Dashboardadmin />
+  </div>
+</div>
+
+    </>
+  );
+};
 
 export default AdminDashboard;
