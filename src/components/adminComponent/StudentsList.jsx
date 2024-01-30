@@ -59,10 +59,8 @@ const StudentList=()=>{
 
     return(
         <>
-        <div className="inset-0 flex items-center justify-center h-screen">
-        </div>
-        <div className="w-full px-0 mx-0 mb-0  ml-12 pl-0 pt-12 mt-5">          
-        <div className="p-4   rounded-lg dark:border-gray-700">
+        <div className="w-full px-0 mx-0 mb-0   pl-0  ">          
+        <div className="rounded-lg dark:border-gray-700">
             <div className="relative  shadow-md sm:rounded-lg">
               <div className="bg-slate-400">
               <h1 className="text-3xl pt-2 text-center"><b>Students List</b></h1></div>

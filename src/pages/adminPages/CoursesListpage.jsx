@@ -5,14 +5,19 @@ import CourseList from '../../components/adminComponent/courseList'
 
 const CoursesListpage = () => {
   return (
-    
-      <div className="flex h-screen justify-center items-center pt-2 mb-2">
+    <>
+    <div className="h-16 w-screen">
       <AdminNavbar className="w-1/5" />
-      <div className="w-4/5 pl-12 mt-12 pt-12">
+      </div>
+      <div className="flex w-full h-full">
+      <div className="w-1/6 h-auto bg-black">
+      <AdminSidebar className="w-1/5" />
+      </div>
+      <div className="w-5/6 h-full bg-slate-100">
      <CourseList/>
       </div>
-      <AdminSidebar className="w-1/5" />
-    </div>
+      </div>
+   </>
   
   )
 }

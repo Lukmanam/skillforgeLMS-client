@@ -50,8 +50,8 @@ const CourseList = () => {
 
   return (
     <>
-      <div className="w-full px-0 mx-0 mb-0  ml-12 pl-0 ">
-        <div className="p-3   rounded-lg dark:border-gray-700">
+      <div className="w-full px-0  mb-0  m-1 pl-0 ">
+        <div className="rounded-lg dark:border-gray-00">
           <div className="relative  shadow-md sm:rounded-lg">
             <div className="bg-slate-400">
               <h1 className="text-3xl pt-2 text-center">
@@ -113,7 +113,7 @@ const CourseList = () => {
                   course.map((data) => (
                     <tr
                       key={data._id}
-                      className="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600"
+                      className=" border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600"
                     >
                       <th
                         scope="row"

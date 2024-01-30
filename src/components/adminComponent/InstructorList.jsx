@@ -76,12 +76,16 @@ const InstructorsList=()=>{
 
     return(
         <>
-        <div className="inset-0 flex items-center justify-center h-screen">
-        <div className="w-full px-0 mx-0 mb-0 ml-12 pl-0">
-          <div className="p-4  rounded-lg dark:border-gray-700">
+        <div className="inset-0 flex items-center justify-center h-auto">
+        <div className="w-full mx-1">
+          <div className=" rounded-lg dark:border-gray-700">
             <div className="relative  shadow-md sm:rounded-lg">
-              
-              <h1 className="text-3xl pt-2"><b>Instructors List</b></h1>
+            <div className="bg-slate-400">
+              <h1 className="text-3xl pt-2 text-center">
+                <b>Instructor List</b>
+              </h1>
+            </div>
+         
               <div className="flex items-center justify-end py-4 bg-white dark:bg-gray-800">
                 <label htmlFor="table-search" className="sr-only">
                   Search

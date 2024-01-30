@@ -50,14 +50,9 @@ export const instructorBlock=async(instructorId,status)=>{
     return data
 }
 
-export const fetchInstructorsCount=async()=>{
-    const data=adminAxiosInstance.get("/instructorCount");
-    return data
-}
-
-export const fetchStudentsCount=async()=>{
-    const data=adminAxiosInstance.get("/studentsCount");
-    return data
+export const fetchsCounts=async()=>{
+    const data=adminAxiosInstance.get("/fetchCounts");
+    return data;
 }
 
 
@@ -70,6 +65,12 @@ export const courseApprove=async(courseId)=>{
     const data=await adminAxiosInstance.post('/courseApproval',{courseId});
     return data;
 }
+
+
+// export const fetchSales=async()=>{
+//     const data=await adminAxiosInstance.get('/fetchSales');
+//     return data
+// }
 
 
 

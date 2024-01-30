@@ -43,7 +43,7 @@ const AddCatregory=()=> {
   });
 
   return (
-    <form onSubmit={handleSubmit} className="p-4 md:p-5 pt-4">
+    <form onSubmit={handleSubmit} className="p-4 md:p-5 pt-4   bg-slate-300  rounded-lg">
       <label
         htmlFor="categoryName"
         className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-900"

@@ -65,8 +65,8 @@ function CourseCategory() {
 
   return (
     <>
-      <div className=" w-3/4 pxn -0 mx-0 mb-0 place-items-center">
-        <div className="p-4  rounded-lg dark:border-gray-700">
+      <div className=" w-full pxn -0 mx-0 mb-0 place-items-center">
+        <div className="  rounded-lg dark:border-gray-700">
           <div className="relative  shadow-md sm:rounded-lg">
             <div className="bg-slate-400">
               <h1 className="text-3xl pt-2 text-center">
@@ -83,16 +83,16 @@ function CourseCategory() {
               isOpen={modalIsOpen}
               onRequestClose={closeModal}
               contentLabel="Add New Category"
-              className="w-3/4 md:w-1/2 lg:w-2/5 xl:w-1/3 mx-auto bg-slate-200 mt-12 pt-12 rounded-box"
+              className="w-3/4 md:w-1/2 lg:w-2/5 xl:w-1/3 mx-auto bg-transparent  pt-12 outline-none rounded-lg"
             >
               <div className="justify-end">
                 <button
                   onClick={closeModal}
                   type="button"
-                  className="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white"
+                  className="text-gray-600 bg-transparent hover:bg-gray-200 hover:text-gray-200 rounded-full text-sm w-10 h-10 ms-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white mt-36"
                 >
                   <svg
-                    className="w-3 h-3"
+                    className="w-4 h-4 "
                     aria-hidden="true"
                     xmlns="http://www.w3.org/2000/svg"
                     fill="none"

@@ -24,7 +24,7 @@ const AdminNavbar = () => {
 
   return (
     
-    <div className="navbar  top-0 bg-base-100 z-[2] fixed">
+    <div className="navbar   top-0 bg-base-300 z-[2] fixed">
       <div className="flex-1">
         <a className="btn btn-ghost text-4xl"><b>SkillForGe</b></a>
       </div>
