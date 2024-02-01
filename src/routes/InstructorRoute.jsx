@@ -10,6 +10,9 @@ import CourseManagement from "../pages/instructorPages/CourseManagementPage";
 import UpdateCourse from "../pages/instructorPages/UpdateCourse";
 import EditCourse from "../components/instructorComponent/EditCourse";
 import InstructorProfile from "../components/instructorComponent/InstructorProfile";
+import ChatDashboard from "../pages/instructorPages/chatDashboard";
+import ChatPage from "../pages/instructorPages/ChatPage/ChatPage";
+import VideoPage from "../pages/instructorPages/videoChatPage/VideoPage"
 
 
 
@@ -28,6 +31,9 @@ return(
     <Route path="/updateCourse/:id" element={<UpdateCourse/>}/>
     <Route path="/editCourse/:id" element={<EditCourse/>}/>
     <Route path="/Profile" element={<InstructorProfile/>}/>
+    <Route path="/chat" element={<ChatDashboard/>}></Route>
+    <Route path="/chatInstructor" element={<ChatPage/>}/>
+    <Route path="/video" element={<VideoPage/>}/>
     
     
     

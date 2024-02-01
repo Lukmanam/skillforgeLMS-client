@@ -1,5 +1,5 @@
     import { Navigate } from "react-router-dom";
-    import jwt_decode from "jwt-decode";
+    import {jwt_decode} from "jwt-decode";
     import { useDispatch } from "react-redux";
     import {instructorLogout} from "../../reduxStore/slices/instructorSlice"
     import { toast } from "react-toastify";

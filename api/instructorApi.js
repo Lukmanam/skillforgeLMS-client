@@ -135,3 +135,8 @@ export const editProfileData=async(values,instructorId)=>{
         const data=await instructoraxiosInstance.post('/profileData',{...values,instructorId});
         return data;
 }
+
+export const instructorfetch=async (instructorId)=>{
+        const data=await instructoraxiosInstance.get(`/instructorinchat/${instructorId}`);
+        return data
+}
