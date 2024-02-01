@@ -155,6 +155,14 @@ export const paymentApi = async (courseData,student) => {
 }
 
 
+export const getInstructor=async(courseId)=>{
+  console.log(courseId,"courseId of enrollment in Api");
+  const data=await studentaxiosInstance.get(`/getinstructor/${courseId}`);
+  console.log(data,"data in return Api");
+  return data;
+}
+
+
 
 export const courseLearn=async(courseId)=>{
   console.log("fetching data from api");
@@ -215,6 +223,12 @@ export const alreadyRated=async(courseId,studentId)=>{
 
 export const fetchCourseRating=async(courseId)=>{
   const data=await studentaxiosInstance.get(`/fetchCourseRating/${courseId}`);
+  return data;
+}
+
+
+export const enableChat=async(studentId,instructorId)=>{
+  const data=await studentaxiosInstance.post('/createChat',{studentId,instructorId})
   return data;
 }
 

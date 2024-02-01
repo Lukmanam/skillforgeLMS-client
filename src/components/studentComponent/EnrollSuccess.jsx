@@ -1,21 +1,38 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import StudentNavbar from "./StudentNavbar";
 import { enrollToCourse } from "../../../api/studentApi";
 import { Link } from 'react-router-dom';
+import { getInstructor } from "../../../api/studentApi";
+import { enableChat } from "../../../api/studentApi";
 const EnrollSuccess = () => {
-
+const [instructor,setInstructor]=useState(null)
 const { student } = useSelector((state) => state.studentReducer);
 const studentId=student._id
+
 console.log(studentId,"THIS IS STUDENTID ");
 const {courseId}=useParams();
+
 console.log(courseId,"THIS IS COURSE ID");
 
 useEffect(()=>{
-    enrollToCourse(courseId, studentId)
-})
+  
+    getInstructor(courseId).then((res)=>{
+      setInstructor(res?.data?.instructor.instructorId)
+    }).catch((error)=>{
+      console.log(error);
+    })
 
+
+  })
+console.log(instructor,"this is instructr in success page");
+  useEffect(()=>{
+    console.log(instructor);
+    enrollToCourse(courseId, studentId)
+    enableChat(studentId,instructor)
+
+  })
 
 return (
     <div>
