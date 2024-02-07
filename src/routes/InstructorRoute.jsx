@@ -13,6 +13,7 @@ import InstructorProfile from "../components/instructorComponent/InstructorProfi
 import ChatDashboard from "../pages/instructorPages/chatDashboard";
 import ChatPage from "../pages/instructorPages/ChatPage/ChatPage";
 import VideoPage from "../pages/instructorPages/videoChatPage/VideoPage"
+import InstructorProtect from "./instructorPrivate/instructorProtect";
 
 
 
@@ -24,16 +25,16 @@ return(
     <Route path="/signup" element={<InstructorSignup/> }/>
     <Route path="/login" element={<InstructorPublic><InstructorLogin/></InstructorPublic>}/>
     <Route path="/insotp" element={<InstructorPublic><InstructorOtp/></InstructorPublic>}/>
-    <Route path="/home" element={<InstructorHome/> }/>
-    <Route path="/forgotPassword" element={<InstructorForgotPassword/>}/>
-    <Route path="/inschangePassword" element={<InChangePassword/>}/>
-    <Route path="/courseManagement" element={<CourseManagement/>}/>
-    <Route path="/updateCourse/:id" element={<UpdateCourse/>}/>
-    <Route path="/editCourse/:id" element={<EditCourse/>}/>
-    <Route path="/Profile" element={<InstructorProfile/>}/>
-    <Route path="/chat" element={<ChatDashboard/>}></Route>
-    <Route path="/chatInstructor" element={<ChatPage/>}/>
-    <Route path="/video" element={<VideoPage/>}/>
+    <Route path="/home" element={<InstructorProtect><InstructorHome/> </InstructorProtect>}/>
+    <Route path="/forgotPassword" element={<InstructorProtect><InstructorForgotPassword/></InstructorProtect>}/>
+    <Route path="/inschangePassword" element={<InstructorProtect><InChangePassword/></InstructorProtect>}/>
+    <Route path="/courseManagement" element={<InstructorProtect><CourseManagement/></InstructorProtect>}/>
+    <Route path="/updateCourse/:id" element={<InstructorProtect><UpdateCourse/></InstructorProtect>}/>
+    <Route path="/editCourse/:id" element={<InstructorProtect><EditCourse/></InstructorProtect>}/>
+    <Route path="/Profile" element={<InstructorProtect><InstructorProfile/></InstructorProtect>}/>
+    <Route path="/chat" element={<InstructorProtect><ChatDashboard/></InstructorProtect>}></Route>
+    <Route path="/chatInstructor" element={<InstructorProtect><ChatPage/></InstructorProtect>}/>
+    <Route path="/video" element={<InstructorProtect><VideoPage/></InstructorProtect>}/>
     
     
     

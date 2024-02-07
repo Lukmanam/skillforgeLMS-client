@@ -12,6 +12,7 @@ import { checkforEnrollment } from "../../../api/studentApi";
 import { paymentApi } from "../../../api/studentApi";
 import RatingComponent from "./RatingComponent";
 import ShowRating from "./showRating";
+import RatingList from "./RatingList";
 
 const CourseDetals = () => {
   const [loading, setLoading] = useState(true);
@@ -54,6 +55,7 @@ const CourseDetals = () => {
         if (res.status === 200) {
           toast.success(res?.data?.message);
           setEnrolledCourse(!enrolledCourse);
+          closeModal()
         } else if (res?.data?.status === 400) {
           toast(res?.data?.message);
         }
@@ -422,6 +424,12 @@ try {
               )}
             </div>
             <hr />
+            {/* {courseData && courseData.length > 0 && (
+            <RatingList courseId={courseData[0]._id} />
+              )} */}
+            {/* <RatingComponent courseId={courseData[0]._id}/> */}
+            {/* <RatingList courseId={courseData[0]?._id}/> */}
+            {/* review rating lists */}
           </div>
         </>
       </>

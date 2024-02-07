@@ -29,15 +29,15 @@ const StudentRoute=()=>{
         <Route path="/login" element={<StudentPublic><StudentLogin/></StudentPublic>}/>
         <Route path="/otp" element={<StudentOtp/>}/>
         <Route path="/stforgotPassword" element={<StudentForgotPassword/>}></Route>
-        <Route path="/changepassword" element={<ChangePassword/>}></Route>
-        <Route path="/favouriteCourses" element={<FavouriteCourses/>}/>
-        <Route path="/CourseDetails/:courseId" element={<CourseDetals/>}></Route>
-        <Route path="/enrolledCourses"element={<EnrolledCourses/>}/>
-        <Route path="/studentProfile" element={<StudentProfile/>}/>
+        <Route path="/changepassword" element={<StudentProtect><ChangePassword/></StudentProtect>}></Route>
+        <Route path="/favouriteCourses" element={<StudentProtect><FavouriteCourses/></StudentProtect>}/>
+        <Route path="/CourseDetails/:courseId" element={<StudentProtect><CourseDetals/></StudentProtect>}></Route>
+        <Route path="/enrolledCourses"element={<StudentProtect><EnrolledCourses/></StudentProtect>}/>
+        <Route path="/studentProfile" element={<StudentProtect><StudentProfile/></StudentProtect>}/>
         <Route path="/courses" element={<AllCourse/>}/>
-        <Route path="/enrollSuccess/:courseId" element={<EnrollSuccess/>}/>
-        <Route path="/learn/:courseId" element={<LearningPage/>}/>
-        <Route path="/chatStudent" element={<ChatPage/>}/>
+        <Route path="/enrollSuccess/:courseId" element={<StudentProtect><EnrollSuccess/></StudentProtect>}/>
+        <Route path="/learn/:courseId" element={<StudentProtect><LearningPage/></StudentProtect>}/>
+        <Route path="/chatStudent" element={<StudentProtect><ChatPage/></StudentProtect>}/>
       
         
         </Routes>

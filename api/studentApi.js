@@ -195,9 +195,9 @@ export const alreadyCompletedModules = async (courseId, studentId) => {
   }
 }
 
-export const rateCourse=async(rated,courseId,studentId)=>{
+export const rateCourse=async(rated,review,courseId,studentId)=>{
 
-  const data=await studentaxiosInstance.post('/rateCourse',{rated,courseId,studentId});
+  const data=await studentaxiosInstance.post('/rateCourse',{rated,review,courseId,studentId});
   return data;
 }
 
@@ -231,4 +231,11 @@ export const enableChat=async(studentId,instructorId)=>{
   const data=await studentaxiosInstance.post('/createChat',{studentId,instructorId})
   return data;
 }
+
+export const fetchcoursereviews=async(courseId)=>{
+  console.log(courseId,"fetch course review");
+  const data=await studentaxiosInstance.get(`/fetchcoursereviews/${courseId}`);
+  return data;
+}
+
 

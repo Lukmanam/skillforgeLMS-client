@@ -24,7 +24,6 @@ function StudentProtect(props){
         }
         else
         {
-            toast("You must Login First");
             return <Navigate to="/login"/>
         }
     } catch (error) {
