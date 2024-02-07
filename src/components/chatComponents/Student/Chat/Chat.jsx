@@ -7,7 +7,8 @@ import { io } from 'socket.io-client';
 import { useNavigate } from 'react-router-dom';
 
 
-const END_POINT = "http://localhost:3000";
+
+const END_POINT = "https://server.shoeniverses.online";
 
 let socket;
 

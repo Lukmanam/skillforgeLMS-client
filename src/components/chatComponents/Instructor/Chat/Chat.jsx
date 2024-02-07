@@ -6,7 +6,7 @@ import ChatBox from '../ChatBox/ChatBox';
 import { io } from 'socket.io-client';
 
 
-const END_POINT = 'http://localhost:3000/';
+const END_POINT = 'https://server.shoeniverses.online/';
 let socket
 
 const Chat = () => {
