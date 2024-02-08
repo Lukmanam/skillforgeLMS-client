@@ -6,6 +6,7 @@ import CoursesListpage from "../pages/adminPages/CoursesListpage";
 import InstructorList from "../pages/adminPages/InstructorListpage";
 import CategoryList from "../pages/adminPages/Categories";
 import AdminProtect from "./adminPrivate/AdminProtect";
+import AdminPublic from "./adminPrivate/Adminpublic";
 
 
 
