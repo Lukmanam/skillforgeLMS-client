@@ -128,5 +128,5 @@ const StudentNavbar = () => {
     );
   };
   
-  export default StudentNavbar;
+  export default StudentNavbar
   
