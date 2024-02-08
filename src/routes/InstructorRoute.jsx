@@ -13,7 +13,7 @@ import InstructorProfile from "../components/instructorComponent/InstructorProfi
 import ChatDashboard from "../pages/instructorPages/ChatDashboard";
 import ChatPage from "../pages/instructorPages/ChatPage/ChatPage";
 import VideoPage from "../pages/instructorPages/videoChatPage/VideoPage"
-import InstructorProtect from "./instructorPrivate/InstructorProtect";
+import InstructorProtect from "./instructorPrivate/instructorProtect";
 
 
 

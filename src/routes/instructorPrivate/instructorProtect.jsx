@@ -6,7 +6,7 @@
 
 
 
-const InstructorProtect=(props)=>{
+const InstructorProtect =(props)=>{
     const dispatch=useDispatch();
     try {
         const token=localStorage.getItem("instructorToken");
@@ -38,6 +38,5 @@ const InstructorProtect=(props)=>{
         
     }
 };
-
 
 export default InstructorProtect
