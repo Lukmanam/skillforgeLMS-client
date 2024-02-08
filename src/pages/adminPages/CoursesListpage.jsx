@@ -1,7 +1,7 @@
 import React from 'react'
 import AdminNavbar from '../../components/adminComponent/AdminNavbar'
 import AdminSidebar from '../../components/adminComponent/AdminSidebar'
-import CourseList from '../../components/adminComponent/courseList'
+import CourseList from '../../components/adminComponent/CourseList'
 
 const CoursesListpage = () => {
   return (
