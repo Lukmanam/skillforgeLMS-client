@@ -11,7 +11,7 @@ import StudentNavbar from "./StudentNavbar";
 import { checkforEnrollment } from "../../../api/studentApi";
 import { paymentApi } from "../../../api/studentApi";
 import RatingComponent from "./RatingComponent";
-import ShowRating from "./showRating";
+import ShowRating from "./ShowRating";
 import RatingList from "./RatingList";
 
 const CourseDetals = () => {
