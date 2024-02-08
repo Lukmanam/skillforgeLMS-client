@@ -1,5 +1,4 @@
 import { Route,Router, Routes } from "react-router-dom";
-import AdminPublic from "./adminPrivate/Adminpublic";
 import AdminLogin from "../pages/adminPages/adminLogin";
 import AdminDashboard from "../pages/adminPages/AdminDashboard";
 import StudentsList from "../pages/adminPages/StudentListpage";
@@ -7,6 +6,7 @@ import CoursesListpage from "../pages/adminPages/coursesListpage";
 import InstructorList from "../pages/adminPages/InstructorListpage";
 import CategoryList from "../pages/adminPages/Categories";
 import AdminProtect from "./adminPrivate/AdminProtect";
+import AdminPublic from "./adminPrivate/Adminpublic";
 
 
 const AdminRoute=()=>{

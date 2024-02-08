@@ -14,4 +14,4 @@ const AdminPublic = (props) => {
   }
 };
 
-export default AdminPublic;
+export default AdminPublic
