@@ -52,13 +52,13 @@ const AdminLogin = () => {
     });
 
   return (
-    <div className="mb-16">
-      <div className="logo w-60 ml-11 mb-5">
+    <div className=" bg-gray-100 h-screen">
+      <div className="logo w-60 ml-11 ">
         <img src="./assets/skillforge.svg" alt="logo" />
       </div>
       <div className="flex items-center justify-center  ">
-        <div className="bg-white p-8 rounded shadow-md w-96  ">
-          <h1 className="text-2xl font-bold mb-4 mt-8">Admin Login</h1>
+        <div className="bg-slate-200 p-10 mt-4 rounded-3xl shadow-gray-500 shadow-2xl w-96  ">
+          <h1 className="text-2xl font-bold text-center mb-4 mt-8">Admin Login</h1>
           <form onSubmit={handleSubmit}>
             <div className="mb-3">
               <label

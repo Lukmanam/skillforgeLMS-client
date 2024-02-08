@@ -5,7 +5,7 @@ import { useFormik } from "formik";
 import { otpVetification,studentResendOtp } from "../../../api/studentApi";
 import {otpValidation} from "../../validations/student/otpValidation"
 
-const studentOtp = () => {
+const StudentOtp = () => {
   const location = useLocation();
   const navigate = useNavigate();
   const { studentEmail, studentId, otpId } = location.state;
@@ -229,4 +229,4 @@ const studentOtp = () => {
   );
 };
 
-export default studentOtp;
+export default StudentOtp;

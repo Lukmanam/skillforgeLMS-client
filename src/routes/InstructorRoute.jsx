@@ -1,19 +1,19 @@
 import { Routes,Route } from "react-router-dom";
 import InstructorLogin from "../pages/instructorPages/InstructorLogin";
-import InstructorSignup from "../pages/instructorPages/instructorSignup";
-import InstructorOtp from "../pages/instructorPages/instructorOtp";
+import InstructorSignup from "../pages/instructorPages/InstructorSignup";
+import InstructorOtp from "../pages/instructorPages/InstructorOtp";
 import InstructorHome from "../pages/instructorPages/InstructorHome";
 import InstructorForgotPassword from "../pages/instructorPages/InstructorForgotPassword";
-import InstructorPublic from "./instructorPrivate/instructorPublic";
+import InstructorPublic from "./instructorPrivate/InstructorPublic";
 import InChangePassword from "../pages/instructorPages/InChangePassword";
 import CourseManagement from "../pages/instructorPages/CourseManagementPage";
 import UpdateCourse from "../pages/instructorPages/UpdateCourse";
 import EditCourse from "../components/instructorComponent/EditCourse";
 import InstructorProfile from "../components/instructorComponent/InstructorProfile";
-import ChatDashboard from "../pages/instructorPages/chatDashboard";
+import ChatDashboard from "../pages/instructorPages/ChatDashboard";
 import ChatPage from "../pages/instructorPages/ChatPage/ChatPage";
 import VideoPage from "../pages/instructorPages/videoChatPage/VideoPage"
-import InstructorProtect from "./instructorPrivate/instructorProtect";
+import InstructorProtect from "./instructorPrivate/InstructorProtect";
 
 
 

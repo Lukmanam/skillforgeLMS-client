@@ -1,8 +1,8 @@
 import { Routes,Route } from "react-router-dom";
 import StudentSignup from "../pages/studentPages/StudentSignup";
 import StudentLogin from "../pages/studentPages/StudentLogin"
-import StudentOtp from "../pages/studentPages/studentOtp";
-import StudentHome from "../pages/studentPages/studentHome";
+import StudentOtp from "../pages/studentPages/StudentOtp";
+import StudentHome from "../pages/studentPages/StudentHome";
 import StudentForgotPassword from "../pages/studentPages/StudentForgotPassword";
 import StudentPublic from "./studentPrivate/StudentPublic";
 import StudentProtect from "./studentPrivate/StudentProtect";

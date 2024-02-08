@@ -1,8 +1,8 @@
 import { Route,Router, Routes } from "react-router-dom";
-import AdminLogin from "../pages/adminPages/adminLogin";
+import AdminLogin from "../pages/adminPages/AdminLogin";
 import AdminDashboard from "../pages/adminPages/AdminDashboard";
 import StudentsList from "../pages/adminPages/StudentListpage";
-import CoursesListpage from "../pages/adminPages/coursesListpage";
+import CoursesListpage from "../pages/adminPages/CoursesListpage";
 import InstructorList from "../pages/adminPages/InstructorListpage";
 import CategoryList from "../pages/adminPages/Categories";
 import AdminProtect from "./adminPrivate/AdminProtect";
