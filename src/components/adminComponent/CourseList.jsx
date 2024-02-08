@@ -265,4 +265,4 @@ const CourseList = () => {
   );
 };
 
-export default CourseList;
+export default CourseList
