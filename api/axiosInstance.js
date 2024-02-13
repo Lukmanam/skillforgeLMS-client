@@ -1,8 +1,8 @@
 
 import axios from "axios";
 
-const baseURL = 'http://localhost:3000';
-// const baseURL ='https://server.shoeniverses.online'
+// const baseURL = 'http://localhost:3000';
+const baseURL ='https://server.shoeniverses.online'
 const studentBaseURL = baseURL;
 const instructorBaseURL = `${baseURL}/instructor`
 const adminBaseURL = `${baseURL}/admin`
