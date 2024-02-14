@@ -44,10 +44,10 @@ const StudentNavbar = () => {
         />
       </div>
       {/* Navigation for Small Screens */}
-      <div className=" lg-hidden flex items-center">
+      <div className="lg:hidden flex items-center">
         <button
           onClick={toggleDropdown}
-          className="text-3xl text-slate-800 focus:outline-none"
+          className="text-3xl text-slate-900 focus:outline-none"
         >
           ☰
         </button>

@@ -12,9 +12,9 @@ const InstructorNavbar = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
-  //   const toggleDropdown=()=>{
-  //     setDropdownOpen(!isDropdownOpen)
-  //   }
+    const toggleDropdown=()=>{
+      setDropdownOpen(!isDropdownOpen)
+    }
   const openModal = () => {
     setModalIsOPen(true);
   };
@@ -40,6 +40,15 @@ const InstructorNavbar = () => {
           className="h-12 mr-4 pr-12"
           alt="logo"
         />
+      </div>
+        {/* Navigation for Small Screens */}
+        <div className="lg:hidden flex items-center">
+        <button
+          onClick={toggleDropdown}
+          className="text-3xl text-slate-900 focus:outline-none"
+        >
+          ☰
+        </button>
       </div>
 
       {/* Navigation */}
@@ -108,6 +117,76 @@ const InstructorNavbar = () => {
           </li>
         </ul>
       </div>
+{/* /////////////////////////////////////////////////////// */}
+      {isDropdownOpen && (
+        <div className="lg:hidden absolute top-16 right-0 bg-base-100 p-4">
+          <ul className="menu menu-vertical">
+          <li>
+            <Link to="/instructor/home"><b>Home</b></Link>
+          </li>
+         
+         
+          <li className="ml-12  pl-1">
+          <Link to="/instructor/courseManagement"> <b>Course Management</b></Link>
+          </li>
+          <li className="ml-12  pl-1">
+            <button onClick={openModal} type='button' className="bg-teal-600 ">
+              <b>+ Add New Course</b>
+            </button>
+            <Modal
+              isOpen={modalIsOpen}
+              onRequestClose={closeModal}
+              contentLabel="Add New Course Modal"
+              className="w-3/4 md:w-1/2 lg:w-2/5 xl:w-1/3 mx-auto bg-slate-200 mt-10 rounded-box"
+            >
+              {/*  */}
+              <div className="flex justify-end">
+                <button
+                  onClick={closeModal}
+                  type="button"
+                  className="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white"
+                >
+                  <svg
+                    className="w-3 h-3"
+                    aria-hidden="true"
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 14 14"
+                  >
+                    <path
+                      stroke="currentColor"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"
+                    />
+                  </svg>
+                  {/* <span className="sr-only">Close modal</span> */}
+                </button>
+              </div>
+              <h3 className="text-lg font-semibold text-center pt-5 text-gray-900 dark:text-black">
+                Add New Course
+              </h3>
+
+              <AddCourse />
+            </Modal>
+          </li>
+           <li className="ml-12  pl-1">
+          <Link to="/instructor/chatInstructor"> <b>Chats </b>  <svg
+                    fill="teal"
+                    viewBox="0 0 16 16"
+                    height="1.5em"
+                    width="2em"
+                  >
+                    <path d="M5 8a1 1 0 11-2 0 1 1 0 012 0zm4 0a1 1 0 11-2 0 1 1 0 012 0zm3 1a1 1 0 100-2 1 1 0 000 2z" />
+                    <path d="M2.165 15.803l.02-.004c1.83-.363 2.948-.842 3.468-1.105A9.06 9.06 0 008 15c4.418 0 8-3.134 8-7s-3.582-7-8-7-8 3.134-8 7c0 1.76.743 3.37 1.97 4.6a10.437 10.437 0 01-.524 2.318l-.003.011a10.722 10.722 0 01-.244.637c-.079.186.074.394.273.362a21.673 21.673 0 00.693-.125zm.8-3.108a1 1 0 00-.287-.801C1.618 10.83 1 9.468 1 8c0-3.192 3.004-6 7-6s7 2.808 7 6c0 3.193-3.004 6-7 6a8.06 8.06 0 01-2.088-.272 1 1 0 00-.711.074c-.387.196-1.24.57-2.634.893a10.97 10.97 0 00.398-2z" />
+                  </svg></Link>
+          </li>
+          </ul>
+        </div>
+      )}
+
+      {/* //////////////////////////////// */}
 
       <div className="flex-none gap-2">
         <div className="form-control">
