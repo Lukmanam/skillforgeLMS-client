@@ -8,7 +8,7 @@ export const addCourseValidation = yup.object().shape({
     .string()
     .test("len", "must meet at least 15 characters", (val) => val.length >= 15).required('please Enter Course Description'),
     price:yup.number().required("Please Enter The Price"),
-    // category:yup.string().required("Please Choose any category"),
+    category:yup.string().required("Please Choose any category"),
     // thumbnail: yup
     //       .mixed()
     //       .test('fileType', 'Only image files are allowed', (value) => {

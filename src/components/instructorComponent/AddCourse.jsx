@@ -78,6 +78,7 @@ console.log(categories,"category iN editCourse  page");
 
   const { values, handleBlur, handleChange, handleSubmit, errors } = useFormik({
     initialValues: initialValues,
+    validationSchema:addCourseValidation,
     onSubmit,
   });
 
