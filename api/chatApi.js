@@ -1,5 +1,6 @@
 import axios from 'axios';
-const baseURL =  "http://localhost:3000";
+// const baseURL =  "http://localhost:3000";
+const baseURL="https://server.shoeniverses.online";
 const chatInstance = axios.create({ baseURL: baseURL });
 
 export async function studentData(id) {
