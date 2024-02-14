@@ -34,13 +34,14 @@ const InstructorNavbar = () => {
 
   return (
     <div className="navbar bg-base-100 w-full flex items-center justify-between mt-4">
-      <div className="flex md:hidden items-center mr-13">
-        <img
-          src="/src/assets/skillforge.svg"
-          className="h-12 mr-4 pr-12"
-          alt="logo"
-        />
-      </div>
+      <div className="hidden md:flex items-center mr-13"> {/* Hide on mobile or tablet */}
+  <img
+    src="/src/assets/skillforge.svg"
+    className="h-12 mr-4 pr-12"
+    alt="logo"
+  />
+</div>
+
         {/* Navigation for Small Screens */}
         <div className="lg:hidden flex items-center">
         <button
