@@ -23,7 +23,7 @@ const CourseList = () => {
   console.log(courses, "these are courses");
 
   return (
-    <div className="container p-3 mt-12 bg-neutral-200">
+    <div className="container p-3  bg-neutral-200">
       <b>Popular Courses</b>
 
       <div className="course-list flex space-x-4 p-4">
