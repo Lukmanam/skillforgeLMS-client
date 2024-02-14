@@ -34,7 +34,7 @@ const InstructorNavbar = () => {
 
   return (
     <div className="navbar bg-base-100 w-full flex items-center justify-between mt-4">
-      <div className="flex sm:hidden items-center mr-13">
+      <div className="flex md:hidden items-center mr-13">
         <img
           src="/src/assets/skillforge.svg"
           className="h-12 mr-4 pr-12"
