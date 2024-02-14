@@ -127,6 +127,7 @@ const StudentNavbar = () => {
                 </a>
               </li>
             </Link>
+            <hr />
             <Link to="/courses">
               {" "}
               <li>
@@ -134,6 +135,7 @@ const StudentNavbar = () => {
                   <b>Courses</b>
                 </a>
               </li>
+              <hr />
             </Link>
             <li>
               <details className="ml-12 ">
@@ -155,6 +157,7 @@ const StudentNavbar = () => {
                 </ul>
               </details>
             </li>
+            <hr />
             <Link to={"/enrolledCourses"}>
               <li className="ml-12  pl-1">
                 <a>
@@ -162,6 +165,7 @@ const StudentNavbar = () => {
                 </a>
               </li>
             </Link>
+            <hr />
             <li className="ml-12  pl-1">
               <Link to="/chatStudent">
                 {" "}
@@ -172,18 +176,13 @@ const StudentNavbar = () => {
                 </svg>
               </Link>
             </li>
+            <hr />
           </ul>
         </div>
       )}
-
-      <div className="flex-none gap-2">
-        <div className="form-control">
-          <input
-            type="text"
-            placeholder="Search"
-            className="input input-bordered w-24 md:w-auto"
-          />
-        </div>
+ 
+      <div className="flex-none gap-5 ">
+        
         <div className="dropdown dropdown-end">
           <div
             tabIndex={0}

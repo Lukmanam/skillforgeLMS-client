@@ -239,3 +239,19 @@ export const fetchcoursereviews=async(courseId)=>{
 }
 
 
+export const searchCourses=async(searchQuery)=>{
+ 
+    console.log(searchQuery,"this is searching");
+    const data=await studentaxiosInstance.get(`/search/${searchQuery}`);
+    return data;
+  
+
+}
+
+export const filterbyCategory=async (filterCategory)=>{
+  console.log(filterCategory);
+  const data=await studentaxiosInstance.get(`/categoryFilter/${filterCategory}`);
+  return data
+}
+
+
