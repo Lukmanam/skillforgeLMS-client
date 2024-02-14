@@ -37,7 +37,7 @@ console.log(instructorId);
       {loading ? (
         <>loading</>
       ) : (
-        <div className="w-screen h-screen p-3  bg-slate-200 ">
+        <div className="w-screen h-full p-3  bg-slate-200 ">
          <h1 className="mt-5 text-lg"> Your Top Rated Courses</h1>
           <div className="course-list flex flex-wrap  mx-auto mb-6 mt-5">
             {course.map((data) => (
