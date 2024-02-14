@@ -114,7 +114,7 @@ const ChatBox = ({ chat, currentUser, setMessages, messages, socket }) => {
               {messages.map((message) => (
                 <div ref={scroll} key={message._id}>
                   {/* Check if the message is a video call link */}
-                  {message.text.includes('http://localhost:5173/instructor/video?roomID=') ? (
+                  {message.text.includes('https://skillforge-lms-client.vercel.app/instructor/video?roomID=') ? (
                     <div className='flex justify-center'>
                       <span
                         className="text-green-800 text-2xl cursor-pointer"

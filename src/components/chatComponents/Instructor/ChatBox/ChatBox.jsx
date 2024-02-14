@@ -169,7 +169,7 @@ const ChatBox = ({ chat, currentinstructor, setMessages, messages, socket }) => 
          <div className='flex items-center justify-center'>
   <button
     type="button"
-    onClick={() => openNewTab("http://localhost:5173/instructor/video")}
+    onClick={() => openNewTab("https://skillforge-lms-client.vercel.app/instructor/video")}
     className="m-7 inline-flex items-center justify-center rounded-lg px-4 py-3 transition duration-500 ease-in-out text-white bg-blue-500 hover:bg-blue-400 focus:outline-none"
   >
     <span className="font-bold">Start Video Chat</span>
