@@ -117,13 +117,16 @@ const InstructorLogin = () => {
             </button>
             
            <OAuthins/>
-            <p className="items-center text-center">
+            <p>
               Don't have an account?
               <Link to={"/instructor/signup"}>
                 <b>Click here</b>
               </Link>
             </p>
           </form>
+          <Link to={"/login"}>
+          <p className="hover:cursor-pointer mt-2">Login as <b>Student</b></p>
+          </Link>
         </div>
       </div>
     </div>

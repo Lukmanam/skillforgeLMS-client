@@ -126,6 +126,9 @@ const StudentLogin = () => {
               </Link>
             </p>
           </form>
+          <Link to={"/instructor/login"}>
+          <p className="hover:cursor-pointer mt-2">Login as <b>Instructor</b></p>
+          </Link>
         </div>
       </div>
     </div>
