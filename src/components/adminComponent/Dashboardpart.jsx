@@ -1,12 +1,20 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import {fetchsCounts} from "../../../api/adminApi" // Replace with your API functions
+import { fetchEnrollments } from '../../../api/adminApi';
+import Chart from "chart.js/auto";
+
 const Dashboardadmin = () => {
+  const chartRef = useRef();
+  const secondChart = useRef()
   const [instructorsCount, setInstructorsCount] = useState(0);
   const [studentsCount, setStudentsCount] = useState(0);
-  const [courseCount,setCourseCount]=useState(0)
+  const [courseCount,setCourseCount]=useState(0);
+  const [averagePerDay, setAveragePerDay] = useState(0);
   const [ApprovedCourse, setApprovedCourse] = useState(0);
   const [ActiveInstructors,setActiveInstructors]=useState(0)
   const [ActiveStudents,setActiveStudents]=useState(0);
+  const [lastFive, setLastFive] = useState(0)
+  
 
   useEffect(() => {
     // Fetch data for instructors count
@@ -24,6 +32,100 @@ const Dashboardadmin = () => {
       });
     
   }, []);
+
+  useEffect(()=>{
+    fetchEnrollments().then((res)=>{
+      setAveragePerDay(res?.data?.averageEnrollmentsPerDay);
+      setLastFive(res?.data?.dailyenrollmentCounts);
+      ar[0] = averagePerDay;
+        ar[1] = courseCount;
+        ar[2] = studentsCount;
+        setDashdata(ar);
+    })
+    .catch((error)=>{
+      console.log(error);
+    })
+  },[]);
+
+
+  useEffect(()=>{
+    // if (lastFive && lastFive.length > 0) {
+    const dayColors = [
+      "rgba(75, 192, 192, 0.5)",
+      "rgba(255, 78, 132, 0.5)",
+      "rgba(255, 89, 86, 0.5)",
+      "rgba(54, 162, 235, 0.5)",
+      "rgba(153, 102, 255, 0.5)",
+    ];
+    const data = {
+      labels: ["Day 5", "Day 4", "Day 3", "Day 2", "Day 1"],
+      datasets: [
+        {
+          label: "Enrollments",
+          data: lastFive,
+          backgroundColor: dayColors,
+          borderColor: "rgba(255, 255, 255, 1)",
+          borderWidth: 2,
+        },
+      ],
+    };
+
+    const options = {
+      scales: {
+        y: {
+          beginAtZero: true,
+        },
+      },
+    };
+
+    // Second Chart (Bar Chart)
+    const dayColorss = [
+      "rgba(55, 89, 86, 0.7)",
+      "rgba(54, 162, 65, 0.7)",
+      "rgba(153, 102, 255, 0.7)",
+    ];
+    const datas = {
+      labels: ["Enrollment", "Total Courses", "Total Students"],
+      datasets: [
+        {
+          label:"",
+          data: [
+           
+            averagePerDay,
+            courseCount,
+            studentsCount
+          ],
+          backgroundColor: dayColorss,
+          borderColor: "rgba(255, 255, 255, 1)",
+          borderWidth: 2,
+        },
+      ],
+    };
+
+    const optionss = {
+      scales: {
+        y: {
+          beginAtZero: true,
+        },
+      },
+    };
+
+    const myChart = new Chart(chartRef.current, {
+      type: "doughnut",
+      data: data,
+      options: options,
+    });
+    const myChartTwo = new Chart(secondChart.current, {
+      type: "bar",
+      data: datas,
+      options: optionss,
+    });
+    return () => {
+      myChart.destroy();
+      myChartTwo.destroy();
+    };
+  // }
+  },[lastFive])
 
   return (
     <>
@@ -108,12 +210,34 @@ const Dashboardadmin = () => {
       <polyline points="1 14 5 9 9 15 14 8 19 14 23 10" />
     </svg>
     <h2 className="text-lg font-semibold mt-2">Total Revenue</h2>
-    <p className="text-gray-600">$5000</p>
+    <p className="text-gray-600">₹5000</p>
   </div>
 
 </div>
+{/* Chart  */}
+<div className='flex flex-wrap justify-between ms-1 me-1 mb-5'>
+            <div className="mt-8 w-2/4">
+              <div className="bg-gradient-to-r from-green-300 to-yellow-200 p-6 rounded-lg shadow-md">
+                <p className="text-lg text-gray-700 font-semibold">
+                  Last 5 Days Enrollments
+                </p>
+                {/* Chart Container */}
+                <canvas ref={chartRef}></canvas>
+              </div>
+            </div>
+            <div className="mt-8 w-1/2">
+              <div className="bg-gradient-to-r from-green-300 to-yellow-200 p-6 rounded-lg shadow-md">
+                <p className="text-lg text-gray-700 font-semibold">
+                  Report
+                </p>
+                {/* Chart Container */}
+                <canvas ref={secondChart}></canvas>
+              </div>
+            </div>
+            
+            </div>
 
-  
+
 </div>
 
 

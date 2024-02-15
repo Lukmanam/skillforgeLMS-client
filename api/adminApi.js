@@ -66,11 +66,11 @@ export const courseApprove=async(courseId)=>{
     return data;
 }
 
+export const fetchEnrollments=async()=>{
+    const data=await adminAxiosInstance.get('/fetchEnrollments');
+    return data;
 
-// export const fetchSales=async()=>{
-//     const data=await adminAxiosInstance.get('/fetchSales');
-//     return data
-// }
+}
 
 
 

@@ -13,7 +13,7 @@ const AdminDashboard = () => {
   <div className="w-full md:w-1/6 h-auto">
     <AdminSidebar className="w-full md:w-1/5" />
   </div>
-  <div className="w-full md:w-5/6 h-screen bg-slate-700 ml-1">
+  <div className="w-full md:w-5/6 h-0 bg-slate-700 ml-1">
     <Dashboardadmin />
   </div>
 </div>
