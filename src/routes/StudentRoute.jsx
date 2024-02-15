@@ -15,6 +15,7 @@ import AllCourse from "../pages/studentPages/AllCourse";
 import EnrollSuccess from "../components/studentComponent/EnrollSuccess";
 import LearningPage from "../pages/studentPages/LearningPage";
 import ChatPage from "../pages/studentPages/ChatPage/ChatPage";
+import ErrorPage from "../pages/studentPages/ErrorPage";
 
 
 
@@ -38,6 +39,7 @@ const StudentRoute=()=>{
         <Route path="/enrollSuccess/:courseId" element={<StudentProtect><EnrollSuccess/></StudentProtect>}/>
         <Route path="/learn/:courseId" element={<StudentProtect><LearningPage/></StudentProtect>}/>
         <Route path="/chatStudent" element={<StudentProtect><ChatPage/></StudentProtect>}/>
+        <Route path="/*" element={<ErrorPage/>}/>
       
         
         </Routes>

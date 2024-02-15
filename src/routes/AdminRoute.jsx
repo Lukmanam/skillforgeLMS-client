@@ -7,6 +7,7 @@ import InstructorList from "../pages/adminPages/InstructorListpage";
 import CategoryList from "../pages/adminPages/Categories";
 import AdminProtect from "./adminPrivate/AdminProtect";
 import AdminPublic from "./adminPrivate/AdminPublic";
+import ErrorPage from "../pages/adminPages/ErrorPage";
 
 
 
@@ -15,6 +16,7 @@ const AdminRoute=()=>{
 
     return(
         <Routes>
+            <Route path="/*" element={<ErrorPage/>} />
             <Route path="/" element={<AdminPublic><AdminLogin/></AdminPublic>}/>
             <Route path="/dashboard" element={<AdminProtect><AdminDashboard/></AdminProtect>}/>
             <Route path="/studentsList" element={<AdminProtect><StudentsList/></AdminProtect>}/>

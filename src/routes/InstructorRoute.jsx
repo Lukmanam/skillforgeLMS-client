@@ -14,6 +14,7 @@ import ChatDashboard from "../pages/instructorPages/ChatDashboard";
 import ChatPage from "../pages/instructorPages/ChatPage/ChatPage";
 import VideoPage from "../pages/instructorPages/videoChatPage/VideoPage"
 import InstructorProtect from "./instructorPrivate/instructorProtect";
+import ErrorPage from "../pages/instructorPages/ErrorPage";
 
 
 
@@ -35,6 +36,7 @@ return(
     <Route path="/chat" element={<InstructorProtect><ChatDashboard/></InstructorProtect>}></Route>
     <Route path="/chatInstructor" element={<InstructorProtect><ChatPage/></InstructorProtect>}/>
     <Route path="/video" element={<InstructorProtect><VideoPage/></InstructorProtect>}/>
+    <Route path="/*" element={<ErrorPage/>}> </Route>
     
     
     
