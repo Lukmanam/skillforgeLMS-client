@@ -55,34 +55,15 @@ const closeModal = () => {
     <>
    
     <div className="w-auto px-0 mx-0 mb-0 items-center ml-12 pl-0  m-10">          
-    <div className="p-4   rounded-lg dark:border-gray-700">
-        <div className="relative  shadow-md sm:rounded-lg">
+    <div className="ml-12   rounded-lg dark:border-gray-700">
+        <div className=" relative  shadow-md sm:rounded-lg">
           <div className="bg-slate-400">
           <h1 className="text-3xl pt-2 text-center"><b>Course</b></h1></div>
           <div className="flex items-center justify-end py-4 bg-white dark:bg-slate-300">
             <label htmlFor="table-search" className="sr-only">
               Search
             </label>
-            <div className="relative">
-              <div className="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none w-4/4x`x`x`">
-                <svg
-                  className="w-4 h-4 text-gray-500 dark:text-gray-400"
-                  aria-hidden="true"
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 20 20"
-                >
-                  <path
-                    stroke="currentColor"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z"
-                  />
-                </svg>
-              </div>
-              
-            </div>
+            
           </div>
           <table className="w-full text-sm text-left text-gray-500 dark:text-gray-400">
             <thead className="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
