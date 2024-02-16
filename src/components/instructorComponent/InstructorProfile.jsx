@@ -5,7 +5,7 @@ import InstructorNavbar from "./InstructorNavbar";
 import { editProfileData } from "../../../api/instructorApi";
 import { toast } from "react-toastify";
 import { instructorLogin } from "../../reduxStore/slices/instructorSlice";
-
+import EditProfileValidation from "../../validations/student/EditProfileValidation";
 const InstructorProfile = () => {
   const [profile, setProfile] = useState(null);
   const [edit, setEdit] = useState(false);
@@ -40,8 +40,9 @@ const InstructorProfile = () => {
     }
   }
 
-  const { values, handleSubmit, handleChange, handleBlur } = useFormik({
+  const { values, handleSubmit, handleChange, handleBlur,errors} = useFormik({
     initialValues: initialValues,
+    validationSchema:EditProfileValidation,
     onSubmit,
     enableReinitialize: true,
   });
@@ -78,6 +79,7 @@ const InstructorProfile = () => {
                     className="mt-1 p-2 w-full border rounded-md focus:outline-none focus:border-blue-500"
                   />
                 </div>
+                {/* {errors.name && <small>{errors.name}</small>} */}
                 <div>
                   <div>
                     <label
@@ -95,6 +97,7 @@ const InstructorProfile = () => {
                       value={values.phone}
                       className="mt-1 p-2 w-full border rounded-md focus:outline-none focus:border-blue-500"
                     />
+                      {errors.phone && <small>{errors.phone}</small>}
                   </div>
                   <label
                     htmlFor="email"
@@ -176,7 +179,11 @@ const InstructorProfile = () => {
                   />
                 </div>
                 <button
-                  onClick={() => setEdit(true)}
+                  onClick={() => 
+                    {
+                     
+                      setEdit(true)}
+                    }
                   className="bg-teal-600 text-white py-2 px-4 rounded-md hover:bg-teal-600 focus:outline-none focus:border-blue-700 focus:ring focus:ring-blue-200"
                 >
                   Edit

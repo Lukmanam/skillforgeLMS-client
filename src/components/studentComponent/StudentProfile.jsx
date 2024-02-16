@@ -4,6 +4,7 @@ import StudentNavbar from "./StudentNavbar";
 import { useDispatch, useSelector } from "react-redux";
 import { editStudentProfile } from "../../../api/studentApi";
 import { studentLogin } from "../../reduxStore/slices/studentslice";
+import EditProfileValidation from "../../validations/student/EditProfileValidation";
 import { toast } from "react-toastify";
 
 const studentProfile = () => {
@@ -17,8 +18,9 @@ const studentProfile = () => {
     email: student?.email,
     phone: student?.phone,
   };
-  const { values, handleSubmit, handleChange, handleBlur } = useFormik({
+  const { values, handleSubmit, handleChange, handleBlur,errors } = useFormik({
     initialValues: initialValues,
+    validationSchema:EditProfileValidation,
     onSubmit,
     enableReinitialize: true,
   });
@@ -70,6 +72,7 @@ const studentProfile = () => {
                   className="mt-1 p-2 w-full border rounded-md focus:outline-none focus:border-blue-500"
                 />
               </div>
+              {errors.name && <small>{errors.name}</small>}
 
               <div>
                 <label
@@ -88,6 +91,8 @@ const studentProfile = () => {
                   className="mt-1 p-2 w-full border rounded-md focus:outline-none focus:border-blue-500"
                 />
               </div>
+              {errors.phone && <small>{errors.phone}</small>}
+              
               <div>
                 <label
                   htmlFor="email"
