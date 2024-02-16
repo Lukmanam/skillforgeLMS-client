@@ -35,7 +35,7 @@ return(
     <Route path="/Profile" element={<InstructorProtect><InstructorProfile/></InstructorProtect>}/>
     <Route path="/chat" element={<InstructorProtect><ChatDashboard/></InstructorProtect>}></Route>
     <Route path="/chatInstructor" element={<InstructorProtect><ChatPage/></InstructorProtect>}/>
-    <Route path="/video" element={<InstructorProtect><VideoPage/></InstructorProtect>}/>
+    <Route path="/video" element={<VideoPage/>}/>
     <Route path="/*" element={<ErrorPage/>}> </Route>
     
     
