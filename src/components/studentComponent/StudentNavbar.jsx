@@ -37,11 +37,9 @@ const StudentNavbar = () => {
   return (
     <div className="navbar bg-base-100 w-full flex items-center justify-between px-4">
       <div className="hidden md:flex items-center mr-13"> {/* Hide on mobile or tablet */}
-  <img
-    src="/src/assets/skillforge.svg"
-    className="h-12 mr-4 pr-12"
-    alt="logo"
-  />
+      <div className="flex-1">
+        <a className="btn btn-ghost text-4xl"><b>SkillForGe</b></a>
+      </div>
 </div>
 
       {/* Navigation for Small Screens */}
