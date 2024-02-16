@@ -215,8 +215,8 @@ const Dashboardadmin = () => {
 
 </div>
 {/* Chart  */}
-<div className='flex flex-wrap justify-between ms-1 me-1 mb-5'>
-            <div className="mt-8 w-2/4">
+<div className='flex flex-wrap justify-evenly ms-1 me-1 mb-5'>
+            <div className="mt-8">
               <div className="bg-gradient-to-r from-green-300 to-yellow-200 p-6 rounded-lg shadow-md">
                 <p className="text-lg text-gray-700 font-semibold">
                   Last 5 Days Enrollments
