@@ -74,10 +74,11 @@ const instructorId=instructor._id
 
   return (
     <div className='bg-blue-50'>
-      <div className='min-h-screen bg-blue-50 flex justify-center'>
+      <div className='min-h-screen bg-blue-10 flex justify-center'>
         <div className='min-h-screen bg-blue-50'>
           <div className='w-full md:w-96 h-screen bg-white mx-auto md:me-10'>
-            <div className='overflow-y-auto h-screen md:h-screen'>
+            <div className='overflow-y-auto h-screen md:h-screen bg-blue-100'>
+              <p className='m-2'>Messages</p>
               {conversations.length === 0 ? (
                 <div className='text-xl text-gray-600 text-center'>
                   <p className='m-20'>No chats</p>
