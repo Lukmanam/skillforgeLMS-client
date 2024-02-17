@@ -51,7 +51,7 @@ const InstructorProfile = () => {
     <>
       <InstructorNavbar />
       <div className="min-h-screen flex items-center bg-slate-100">
-        <div className="w-full max-w-md mx-auto  bg-slate-300 rounded-lg  p-6 shadow-lg ">
+        <div className="w-full max-w-sm mx-auto   rounded-badge  p-5 shadow-slate-400 shadow-2xl  ">
           <div className="mb-6  text-center">
             <img
               src="https://img.freepik.com/premium-vector/account-icon-user-icon-vector-graphics_292645-552.jpg?w=100"

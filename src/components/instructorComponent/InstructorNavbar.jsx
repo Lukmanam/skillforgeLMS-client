@@ -62,7 +62,7 @@ const InstructorNavbar = () => {
           <Link to="/instructor/courseManagement"> <b>Course Management</b></Link>
           </li>
           <li className="ml-12  pl-1">
-            <button onClick={openModal} type='button' className="bg-teal-600 ">
+            <button onClick={openModal} type='button' className="bg-teal-600 text-white ">
               <b>+ Add New Course</b>
             </button>
             <Modal
@@ -219,9 +219,7 @@ const InstructorNavbar = () => {
                     <span className="badge">New</span>
                     </Link>
                 </li>
-                <li>
-                  <a>Settings</a>
-                </li>
+               
                 <li>
                   <a onClick={handleLogout}>
                     <b>Logout</b>

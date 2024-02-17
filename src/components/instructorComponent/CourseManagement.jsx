@@ -86,7 +86,7 @@ const closeModal = () => {
                 course.map((data) => (
                   <tr
                     key={data._id}
-                    className="bg-white border-b dark:bg-slate-200 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-100"
+                    className=" border-b dark:bg-gray-50 dark:border-gray-200 hover: bg-slate-200 dark:hover:bg-gray-100"
                   >
                     <th
                       scope="row"

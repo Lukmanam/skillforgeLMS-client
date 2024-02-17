@@ -100,7 +100,7 @@ const AddModule=({course,setModules})=> {
           </form>
 
           <form onSubmit={handleSubmit} encType="multipart/form-data">
-            <div className="grid gap-4 mb-4 sm:grid-cols-2">
+            <div className="grid gap-4 mb-4 sm:grid-cols-2 ">
               <div className="sm:col-span-2">
                 <label
                   htmlFor="module_title"
@@ -115,7 +115,7 @@ const AddModule=({course,setModules})=> {
                   onChange={handleChange}
                   onBlur={handleBlur}
                   value={values.module_title}
-                  className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
+                  className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-50 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
                   placeholder="Type Module title"
                   required
                 />
@@ -140,7 +140,7 @@ const AddModule=({course,setModules})=> {
                   onChange={handleChange}
                   onBlur={handleBlur}
                   value={values.module_order}
-                  className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
+                  className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-50 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
                   placeholder="Enter module order"
                   required
                 />
@@ -165,7 +165,7 @@ const AddModule=({course,setModules})=> {
                   accept=".mp4"
                   onChange={handleVideoChange}
                   
-                  className="border border-gray-500 rounded-md font-medium text-gray-400"
+                  className="border border-gray-500 rounded-md font-medium text-gray-300 p-1"
                 />
                 {/* {formik.touched.video_url && formik.errors.video_url && (
                   <div className="text-red-700 text-sm">
