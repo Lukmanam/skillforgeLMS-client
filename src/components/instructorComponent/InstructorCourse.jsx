@@ -39,7 +39,7 @@ console.log(instructorId);
       ) : (
         <div className="w-screen h-full p-3  bg-slate-200 ">
          <h1 className="mt-5 text-lg"> Your Top Rated Courses</h1>
-          <div className="course-list flex flex-wrap  mx-auto mb-6 mt-5">
+          <div className="course-list flex flex-wrap  mx-auto items-center justify-center">
             {course.map((data) => (
               <InstructorCourseCard key={data._id} value={data} />
             ))}

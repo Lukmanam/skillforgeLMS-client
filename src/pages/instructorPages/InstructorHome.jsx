@@ -5,7 +5,7 @@ const InstructorHome=()=>{
 
     return(
         
-        <div className="container items-center">
+        <div className="items-center bg-black">
         <InstructorNavbar/>
         <InstructorCourse/>
         </div>
