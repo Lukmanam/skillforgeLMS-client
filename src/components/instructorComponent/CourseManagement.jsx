@@ -22,8 +22,6 @@ const CourseManagement = () => {
     useEffect(()=>{
         myCourses(instructorId).then
         ((res)=>{
-            console.log("This is respoooooooooooooooooooooonse....",res);
-
             setCourses(res?.data?.courses)
         }).catch((error)=>{
             console.log(error.message);
@@ -53,19 +51,14 @@ const closeModal = () => {
 
   return (
     <>
-   
-    <div className="w-auto px-0 mx-0 mb-0 items-center ml-12 pl-0  m-10">          
-    <div className="ml-12   rounded-lg dark:border-gray-700">
-        <div className=" relative  shadow-md sm:rounded-lg">
-          <div className="bg-slate-400">
-          <h1 className="text-3xl pt-2 text-center"><b>Course</b></h1></div>
-          <div className="flex items-center justify-end py-4 bg-white dark:bg-slate-300">
-            <label htmlFor="table-search" className="sr-only">
-              Search
-            </label>
-            
-          </div>
-          <table className="w-full text-sm text-left text-gray-500 dark:text-gray-400">
+  
+    <div className="w-full p-5 flex justify-center items-center ">          
+    <div className=" dark:border-gray-700">
+        <div className=" relative  shadow-xl sm:rounded-xl bg-slate-100">
+         
+          <h1 className="text-3xl pt-2 text-center"><b>Course</b></h1>
+        
+          <table className="text-sm text-left text-gray-500 dark:text-gray-500">
             <thead className="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
               <tr>
                 <th scope="col" className="px-6 py-3">
@@ -93,7 +86,7 @@ const closeModal = () => {
                 course.map((data) => (
                   <tr
                     key={data._id}
-                    className="bg-white border-b dark:bg-slate-200 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600"
+                    className="bg-white border-b dark:bg-slate-200 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-100"
                   >
                     <th
                       scope="row"
@@ -129,7 +122,7 @@ const closeModal = () => {
                    
                         <Link to={`/instructor/updateCourse/${data._id}`}>
                         <button
-                          className="focus:outline-none w-24 text-white bg-teal-600 hover-bg-red-800 focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-teal-600 dark:hover:bg-red-700 dark:focus:ring-red-900"
+                          className="focus:outline-none w-24 text-white bg-teal-600 hover-bg-red-800 focus:ring-4  font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-teal-600 dark:hover:bg-red-700 dark:focus:ring-red-900"
                           type="button"
                          
                         >
@@ -140,7 +133,7 @@ const closeModal = () => {
 
                          <td className="px-6 py-4">
                          <button onClick={()=>{setSelectedCourseId(data._id);
-                          openModal()}}type='button'  className="focus:outline-none w-24 text-white bg-teal-600 hover-bg-red-800 focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-teal-600 dark:hover:bg-red-700 dark:focus:ring-red-900">
+                          openModal()}}type='button'  className="focus:outline-none w-24 text-white bg-teal-600 hover-bg-red-800  font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-teal-600 dark:hover:bg-red-700 dark:focus:ring-red-900">
               <b>Edit</b>
             </button>
             <Modal 
@@ -199,7 +192,9 @@ const closeModal = () => {
           </table>
         </div>
       </div>
-    </div>
+      </div>
+ 
+   
   
   </>
   )
