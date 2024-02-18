@@ -27,9 +27,10 @@ const navigate = useNavigate();
   return (
     <>
         <StudentNavbar/>
-        <div className="course-list flex space-x-4 p-4">
-                 
-                 <div className="course-list flex flex-wrap space-x-4 p-4 mb-5">
+        {/* <div className="course-list flex space-x-4 p-4"> */}
+        <div className="lg:w-full bg-slate-200 h-full p-4 shadow-2xl shadow-slate-300 ">
+     
+                 <div className="course-list flex flex-wrap p-4 mb-5">
                  {favCourses&&favCourses.length>0 ? (
                            favCourses.map((data)=>
                             <FavCourseCard key={data._id} value={data} />
