@@ -388,7 +388,7 @@ try {
                 >
                   <div className="flex items-center">
                     <span className="mr-4"></span>
-                    <h3 className="text-lg font-medium text-gray-900">
+                    <h3 className="text-lg font-medium text-gray-900 ">
                       <span>
                         {module.module.module_order}.{" "}
                         {module.module.module_title}
@@ -418,7 +418,7 @@ try {
                   <div className="h-4 rounded-md bg-gray-400 w-1/4 mb-4"></div>
                 </div>
               ) : (
-                <p className="text-gray-700">
+                <p className="text-gray-700 ml-6">
                   {courseData[0].courseDescription}
                 </p>
               )}
