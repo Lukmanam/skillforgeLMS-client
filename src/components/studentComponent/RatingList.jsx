@@ -11,16 +11,24 @@ const RatingList = ({courseId}) => {
 
     useEffect(()=>{
         fetchcoursereviews(courseId).then((res)=>{
-            setReviews(res?.data?.documents)
+            setReviews(res?.data?.ratenReviews)
             setRatingsCount(res?.data?.ratingCount)
             })
     },[])
     console.log(reviews,"this is whooole reviews");
+    console.log(ratingsCount,"this is the ratings count ");
   return (
     <>
     <div className='h-56 w-screen bg-slate-00'>
-    <h2 className="text-xl mt-12 ml-2 font-bold mb-4">Reviews</h2>
+    <h2 className="text-xl mt-12 ml-2 font-bold mb-4">Reviews  MUHAMMED LUKMAN</h2>
+
     <div>
+      {reviews.map((review)=>{
+        <div>listing reviews and ratings</div>
+
+        // <div className='ml-10'><p className=' font-bold'>{review.studentId}</p></div>
+
+      })}
      {Array.from({ length: 5 }, (_, index) => (
          <span
          key={index}

@@ -424,12 +424,14 @@ try {
               )}
             </div>
             <hr />
-            {/* {courseData && courseData.length > 0 && (
+            <div className="w-screen m-3">
+
+            {courseData && courseData.length > 0 && (
             <RatingList courseId={courseData[0]._id} />
-              )} */}
-            {/* <RatingComponent courseId={courseData[0]._id}/> */}
-            {/* <RatingList courseId={courseData[0]?._id}/> */}
-            {/* review rating lists */}
+              )}
+           
+            </div>
+    
           </div>
         </>
       </>

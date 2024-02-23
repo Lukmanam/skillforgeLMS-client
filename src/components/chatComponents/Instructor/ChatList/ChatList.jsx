@@ -22,8 +22,8 @@ const ChatList = ({ data, currentinstructorId }) => {
       <div className='border-b bg-slate-200'>
         {
           userDetails && (
-            <div className='flex items-center '>
-              <div className='m-3'>
+            <div className='flex items-center hover:bg-blue-50 focus:bg-slate-50 '>
+              <div className='m-3 '>
                 <img
                   src="../assets/chatAvatar.png"
                   alt={`Photo of ${userDetails.name}`}
