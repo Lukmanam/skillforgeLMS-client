@@ -21,7 +21,7 @@ const RatingList = ({ courseId }) => {
       <div className="h-56 w-screen bg-slate-00">
         <h2 className="text-xl  ml-2 font-bold mb-4">Reviews</h2>
 {
-  reviews.length>0?(
+  reviews?.length>0?(
     reviews.map((review) => {
       return (
         <div className="mt-6">
@@ -50,7 +50,7 @@ const RatingList = ({ courseId }) => {
     })
     
   ):(
-    <div className="ml-6">No Reviews Yet</div>
+    <div>No Reviews Yet</div>
   )
 }
         
