@@ -23,10 +23,10 @@ const CourseList = () => {
   console.log(courses, "these are courses");
 
   return (
-    <div className="p-6  bg-neutral-200">
+    <div className="p-7  bg-neutral-200">
       <b>Popular Courses</b>
 
-      <div className="course-list flex space-x-4 p-4">
+      <div className="course-list flex space-x-4 p-2 justify-center items-center">
         <div className="course-list   flex flex-wrap  mx-auto mb-6">
           {courses && courses.length > 0 ? (
             courses.map((data) => <CourseCard key={data._id} value={data} />)

@@ -73,7 +73,7 @@ const AllCourse = () => {
       </div>
       <div className="flex flex-col lg:flex-row">
         {/* Left-sided category filter */}
-        <div className="lg:w-1/5 bg-slate-200  p-4">
+        <div className="lg:w-72 bg-slate-200  p-5">
           <ul class="list">
             <li>
               {" "}
@@ -105,7 +105,7 @@ const AllCourse = () => {
         </div>
 
         {/* Listing all courses in the rest of the space */}
-        <div className="lg:w-4/5 bg-slate-200 h-full p-4 shadow-2xl shadow-slate-300 ">
+        <div className="lg:w-5/6 bg-slate-200 h-full p-4 shadow-2xl shadow-slate-300 ">
        
           <div className="flex items-center justify-center">
   <div className="flex w-full" > {/* Use flex container */}

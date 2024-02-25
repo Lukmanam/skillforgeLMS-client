@@ -35,8 +35,7 @@ const CourseCard = ({ value }) => {
   };
 
   return (
-    <div className="course-card bg-white rounded-lg  outline-slate-500 shadow-lg overflow-hidden m-2  h-auto w-72">
-            <Link to={`/CourseDetails/${value._id}`} >
+<div className="course-card bg-white rounded-lg outline-slate-500 shadow-lg overflow-hidden m-2 h-auto w-full lg:w-68">            <Link to={`/CourseDetails/${value._id}`} >
 
       <img
         src={value?.thumbnail}
