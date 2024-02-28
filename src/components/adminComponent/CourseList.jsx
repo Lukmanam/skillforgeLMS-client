@@ -10,17 +10,14 @@ const CourseList = () => {
     courses()
       .then((res) => {
         setCourses(res?.data?.courses);
-        console.log(course);
       })
       .catch((error) => {
         console.log(error.message);
       });
   }, []);
 
-  console.log(courses, "these are coursae");
   const Approval = async (courseId, approvalStatus) => {
     try {
-      console.log(courseId, approvalStatus);
       const res = await courseApprove(courseId);
       if (res.status === 200) {
         let updatedData = course.map((course) => {
@@ -220,7 +217,6 @@ const CourseList = () => {
                                 data-modal-hide={`popup-modal-${data._id}`}
                                 type="button"
                                 onClick={() => {
-                                  console.log("Clicked category Id", data._id); // Log the clicked student ID
                                   Approval(data._id, data.isApproved);
                                 }}
                                 className="text-white bg-red-600 hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-red-300 dark:focus:ring-red-800 font-medium rounded-lg text-sm inline-flex items-center px-5 py-2.5 text-center mr-2"

@@ -14,7 +14,6 @@ const AddCatregory=()=> {
   
   async function onSubmit(values){
     const res=await addCategory(values);
-    console.log(res);
     try {
         
         if(res.status==200)
@@ -24,7 +23,6 @@ const AddCatregory=()=> {
         }
         else if(res.status===400)
         {
-            console.log(res.status);
             toast.error(res?.data?.message)
         }
         

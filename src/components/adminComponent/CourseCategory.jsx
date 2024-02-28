@@ -18,11 +18,9 @@ function CourseCategory() {
   };
 
   const openunlistModal = (categoryId) => {
-    console.log("Trying to open unlist mdal");
-    console.log(unlistModalOpen, "first console");
+   
     setUnlistModalOpen(categoryId);
   };
-  console.log(unlistModalOpen, "second");
 
   const closeunlistModal = () => {
     setUnlistModalOpen(null);
@@ -31,7 +29,7 @@ function CourseCategory() {
   useEffect(() => {
     categoriesList()
       .then((res) => {
-        console.log(res);
+        
         setCategory(res?.data?.category);
       })
       .catch((error) => {
@@ -41,7 +39,6 @@ function CourseCategory() {
 
   const listunlistCategory = async (categoryId, listStatus) => {
     try {
-      console.log("changing list bstatuys");
       setLoading(true);
       const res = await changeCategorystatus(categoryId);
       if (res?.status === 200) {
@@ -57,7 +54,7 @@ function CourseCategory() {
         setCategory(updatedData);
         setUnlistModalOpen(false);
       }
-      console.log(res);
+      
     } catch (error) {
       console.log(error);
     }
@@ -243,7 +240,6 @@ function CourseCategory() {
                               data-modal-hide={`popup-modal-${data._id}`}
                               type="button"
                               onClick={() => {
-                                console.log("Clicked category ID:", data._id);
                                 listunlistCategory(data._id, data.isBlocked);
                                 closeunlistModal();
                               }}
