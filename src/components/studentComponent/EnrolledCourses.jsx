@@ -26,7 +26,6 @@ const EnrolledCourses = () => {
       });
   }, [studentId]); // Assuming studentId is the only dependency needed for this effect
   
-  console.log(enrolledCourses,"yhis is enroooooooooooooled course");
   return (
     <>
       <StudentNavbar />

@@ -20,8 +20,6 @@ const CourseList = () => {
       });
   }, []);
 
-  console.log(courses, "these are courses");
-
   return (
     <div className="p-7  bg-neutral-200">
       <b>Popular Courses</b>

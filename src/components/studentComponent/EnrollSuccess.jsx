@@ -26,7 +26,6 @@ useEffect(()=>{
 
 
   })
-console.log(instructor,"this is instructr in success page");
   useEffect(()=>{
     console.log(instructor);
     enrollToCourse(courseId, studentId)

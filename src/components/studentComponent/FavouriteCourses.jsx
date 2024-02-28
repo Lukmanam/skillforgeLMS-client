@@ -21,7 +21,6 @@ const navigate = useNavigate();
     })
   },[])
 
-  console.log(favCourses,"thios is favourite Courses");
 
 
   return (
