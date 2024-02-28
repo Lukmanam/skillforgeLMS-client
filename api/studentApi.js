@@ -114,9 +114,7 @@ export const fetchCourseData = async (courseId) => {
 // CourseEnrollment
 
 export const enrollToCourse = async (courseId, studentId) => {
-  console.log("in Api to enrolment");
-  console.log(courseId, "this is courseId");
-  console.log(studentId, "this is student id");
+ 
   const data = await studentaxiosInstance.post('/enrolltoCourse', { studentId, courseId })
   return data
 }
@@ -128,24 +126,20 @@ export const checkforEnrollment = async (studentId, courseId) => {
 }
 
 export const fetchEnrolledCourse = async (studentId) => {
-  console.log(studentId, "student Id to fetch saved Courses in api");
   const data = await studentaxiosInstance.get(`/enrolledCourse/${studentId}`)
   return data;
 }
 
 export const editStudentProfile = async (studentId, values) => {
-  console.log("in api", values);
   const data = await studentaxiosInstance.post('/editStudentProfile', { studentId, values })
   return data
 }
 
 export const paymentApi = async (courseData,student) => {
   try {
-    console.log("in payment Api", courseData);
-    console.log(student,"this is student in api");
+    
   
       const data =  studentaxiosInstance.post('/paymentCheckoutSesion', {courseData,student});
-      console.log(data, "api data");
       return data;
    
 
@@ -156,24 +150,21 @@ export const paymentApi = async (courseData,student) => {
 
 
 export const getInstructor=async(courseId)=>{
-  console.log(courseId,"courseId of enrollment in Api");
   const data=await studentaxiosInstance.get(`/getinstructor/${courseId}`);
-  console.log(data,"data in return Api");
   return data;
 }
 
 
 
 export const courseLearn=async(courseId)=>{
-  console.log("fetching data from api");
+  
   const data=await studentaxiosInstance.get(`/learnCourse/${courseId}`);
-  console.log(data,"Course Learining data");
+  
   return data;
 }
 
 
 export const saveCourseProgression=async(courseId,studentId,moduleId)=>{
-  console.log("data passing to save course Progrtess");
   const data=await studentaxiosInstance.post('/saveCourseProgress',{courseId,studentId,moduleId});
   return data
 }
@@ -204,7 +195,6 @@ export const rateCourse=async(rated,review,courseId,studentId)=>{
 export const alreadyRated=async(courseId,studentId)=>{
   try {
     
-    console.log("in Api", courseId,"helo courseId",studentId,"Student Id for checking ");
     const data=await studentaxiosInstance.get('/checkratingStatus',{
       params:{
         courseId: courseId,
@@ -233,7 +223,6 @@ export const enableChat=async(studentId,instructorId)=>{
 }
 
 export const fetchcoursereviews=async(courseId)=>{
-  console.log(courseId,"fetch course review");
   const data=await studentaxiosInstance.get(`/fetchcoursereviews/${courseId}`);
   return data;
 }
@@ -241,7 +230,6 @@ export const fetchcoursereviews=async(courseId)=>{
 
 export const searchCourses=async(searchQuery)=>{
  
-    console.log(searchQuery,"this is searching");
     const data=await studentaxiosInstance.get(`/search/${searchQuery}`);
     return data;
   
@@ -249,7 +237,6 @@ export const searchCourses=async(searchQuery)=>{
 }
 
 export const filterbyCategory=async (filterCategory)=>{
-  console.log(filterCategory);
   const data=await studentaxiosInstance.get(`/categoryFilter/${filterCategory}`);
   return data
 }
