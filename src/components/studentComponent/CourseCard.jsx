@@ -15,10 +15,10 @@ const CourseCard = ({ value }) => {
     console.log(studentId, "student Id in useEffect");
     console.log(courseId, "course Id in useEffect");
     favouriteStatus(courseId, studentId)
-      .then((res) =>{ setFavourite(res?.data?.favorite);
+      .then((res) => {
+        setFavourite(res?.data?.favorite);
         console.log(res?.data?.favorite);
-    
-    } )
+      })
       .catch((error) => {
         console.log(error);
       });
@@ -35,30 +35,30 @@ const CourseCard = ({ value }) => {
   };
 
   return (
-<div className="course-card bg-white rounded-lg outline-slate-500 shadow-lg overflow-hidden m-2 h-auto w-full lg:w-68">            <Link to={`/CourseDetails/${value._id}`} >
-
-      <img
-        src={value?.thumbnail}
-        alt="Course"
-        className="w-full h-auto object-fitr"
-      />
-      <div className="p-2">
-        <h2 className="text-sm font-semibold mb-2">{value?.courseName}</h2>
-        <div className="flex">
-          <img
-            className="w-5 h-5  "
-            src="https://thumbs.dreamstime.com/b/teacher-icon-vector-male-person-profile-avatar-book-teaching-school-college-university-education-glyph-113754458.jpg"
-            alt="Bordered avatar"
-          />
-          <p className="text-xs text-gray-500 ">
-            <b> {value?.instructorId?.name}</b>
-          </p>
+    <div className="course-card bg-white rounded-lg outline-slate-500 shadow-lg overflow-hidden m-2 h-auto w-full lg:w-68">
+      {" "}
+      <Link to={`/CourseDetails/${value._id}`}>
+        <img
+          src={value?.thumbnail}
+          alt="Course"
+          className="w-full h-auto object-fitr"
+        />
+        <div className="p-2">
+          <h2 className="text-sm font-semibold mb-2">{value?.courseName}</h2>
+          <div className="flex">
+            <img
+              className="w-5 h-5  "
+              src="https://thumbs.dreamstime.com/b/teacher-icon-vector-male-person-profile-avatar-book-teaching-school-college-university-education-glyph-113754458.jpg"
+              alt="Bordered avatar"
+            />
+            <p className="text-xs text-gray-500 ">
+              <b> {value?.instructorId?.name}</b>
+            </p>
+          </div>
         </div>
-      </div>
       </Link>
       <div className="flex items-center">
-        <div className="flex items-center">
-        </div>
+        <div className="flex items-center"></div>
         {favourite === true ? (
           <button
             className="ml-auto"

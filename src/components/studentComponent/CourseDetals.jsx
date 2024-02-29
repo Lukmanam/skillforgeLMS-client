@@ -111,7 +111,7 @@ try {
             <>
               <div className="animate-pulse">
                 {/* Skeleton Loader */}
-                <div className="container mx-auto my-8 bg-gray-800 rounded-md p-4">
+                <div className="container mx-auto my-0 bg-gray-800 rounded-md p-4">
                   <div className="flex flex-wrap items-center">
                     {/* Left Part - Video Player Skeleton */}
                     <div className="md:w-full lg:w-1/3 bg-gray-700 rounded-md p-4">
@@ -403,7 +403,7 @@ try {
               ))
             )}
           </div>
-          <hr />
+          {/* <hr /> */}
         </div>
 
         <>
@@ -423,7 +423,7 @@ try {
                 </p>
               )}
             </div>
-            <hr />
+            {/* <hr /> */}
             <div className="w-screen m-3">
 
             {courseData && courseData.length > 0 && (
