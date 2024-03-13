@@ -54,11 +54,11 @@ const StudentNavbar = () => {
 
       {/* Navigation for large screen*/}
       <div className="items-center hidden lg:flex">
-        <ul className="menu menu-horizontal px-1 ml-10">
+        <ul className="menu menu-horizontal">
           <Link to="/">
             {" "}
             <li>
-              <a className="ml-12 ">
+              <a className=" ">
                 <b>Home</b>
               </a>
             </li>
@@ -71,30 +71,7 @@ const StudentNavbar = () => {
               </a>
             </li>
           </Link>
-          <li>
-            <details className="ml-12 ">
-              <summary>
-                <a className="pl-5 pr-5">
-                  <b>Learn</b>
-                </a>
-              </summary>
-              <ul className="">
-                {
-                  categories && categories.length > 0 ? (
-                    categories.map((data) => (
-                      <li>
-                        <a>{data.name}</a>
-                      </li>
-                    ))
-                  ) : (
-                    <li>Category Not Available</li>
-                  )
-
-                  // Loading state or something else while categories are being fetched
-                }
-              </ul>
-            </details>
-          </li>
+         
           <Link to={"/enrolledCourses"}>
             <li className="ml-12  pl-1">
               <a>
@@ -102,7 +79,7 @@ const StudentNavbar = () => {
               </a>
             </li>
           </Link>
-          <li className="ml-12  pl-1">
+          <li className="ml-12 me-16 pl-6">
             <Link to="/chatStudent">
               {" "}
               <b>Chats </b>{" "}
