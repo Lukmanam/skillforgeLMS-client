@@ -4,9 +4,7 @@ import axios from 'axios';
 
 
 export const studentSignup = async (signupData) => {
-  console.log("this is signup data", signupData);
   const data = await studentaxiosInstance.post("/signup", signupData);
-  console.log("this is data student api", data);
   return data;
 
 };
@@ -28,7 +26,6 @@ export const studentResendOtp = async (studentEmail) => {
 
 
 export const studentLoginVerify = async (loginData) => {
-  console.log("in student Api");
   const Data = await studentaxiosInstance.post('/login', loginData)
   return Data
 }
@@ -44,18 +41,15 @@ export const studentforgotpassword = async (email) => {
 
 export const studentChangePassword = async (values) => {
   try {
-    console.log({ ...values }, "vaaaak")
     const Data = await studentaxiosInstance.post('/studentChangePassword', { ...values })
-    console.log("this is data");
     return Data
   }
   catch (error) {
-    console.log(error, "api ile error");
+    console.log(error);
   }
 }
 
 export const googleAuth = async (userData) => {
-  console.log(userData, "User data here In API");
   const data = await studentaxiosInstance.post('/googleSignin', userData)
   return data
 }
@@ -71,7 +65,6 @@ export const fetchAllCourses = async () => {
 }
 export const addtoFavCourses = async (courseId, studentId) => {
   try {
-    console.log("in api favourite Courses", courseId, studentId);
     const data = await studentaxiosInstance.post('/addtoFavourite', { courseId, studentId });
     return data;
 
@@ -91,10 +84,8 @@ export const listCategories = async () => {
 }
 
 export const favouriteStatus = async (courseId, studentId) => {
-  console.log(courseId, studentId, "in api for favourirwe");
 
   const data = await studentaxiosInstance.post('/checkFavouriteStatus', { courseId, studentId });
-  console.log(data);
   return data;
 }
 
@@ -105,7 +96,6 @@ export const fetchFavouriteCourses = async (studentId) => {
 
 
 export const fetchCourseData = async (courseId) => {
-  console.log("In student Api for fetching courseData");
   const data = await studentaxiosInstance.get(`/fetchCourseData/${courseId}`)
   return data
 }
@@ -120,7 +110,6 @@ export const enrollToCourse = async (courseId, studentId) => {
 }
 
 export const checkforEnrollment = async (studentId, courseId) => {
-  console.log(studentId, "student", courseId, "course");
   const data = await studentaxiosInstance.post('/checkEnrollment', { studentId, courseId });
   return data
 }

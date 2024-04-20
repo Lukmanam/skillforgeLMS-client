@@ -14,7 +14,7 @@ export async function fetchInstructorDetails(id) {
 }
 
 export async function chatData(studentId) {
-    console.log("in caht data",studentId);
+    
     const data = await chatInstance.get(`/chat/chat/${studentId}`);
     return data;
 }

@@ -1,7 +1,7 @@
 import { adminAxiosInstance, studentaxiosInstance } from "./axiosInstance";
 
 export const adminLoginVerify=async(loginData)=>{
-    console.log("admin Login verify in API");
+    
     const data=await adminAxiosInstance.post("/login",loginData);
     return data
 }
@@ -14,7 +14,7 @@ export const studentsList=async()=>{
 export const addCategory=async(category)=>{
  try {
      const data=await adminAxiosInstance.post('/addCategory',category);
-     console.log(data,"thius nis admin apiu aeeror");
+     
      return data;
     
  } catch (error) {
