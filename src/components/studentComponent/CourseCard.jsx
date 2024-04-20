@@ -12,12 +12,9 @@ const CourseCard = ({ value }) => {
   useEffect(() => {
     const studentId = student?._id;
     const courseId = value?._id;
-    console.log(studentId, "student Id in useEffect");
-    console.log(courseId, "course Id in useEffect");
     favouriteStatus(courseId, studentId)
       .then((res) => {
         setFavourite(res?.data?.favorite);
-        console.log(res?.data?.favorite);
       })
       .catch((error) => {
         console.log(error);

@@ -35,7 +35,6 @@ const Chat = () => {
 
   useEffect(() => {
     socket = io(END_POINT);
-    console.log("End point Connected");
   }, []);
 
   useEffect(() => {

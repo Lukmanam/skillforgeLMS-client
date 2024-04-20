@@ -25,8 +25,6 @@ const AddCourse = () => {
 
 
   async function onSubmit(values) {
-    console.log(values, "Add course Pge");
-    // console.log(thumbnailImage,"tjis is thumbnail Image in forntend");
     const res = await addCourseapi({...values, thumbnailImage, instructor });
     if(res.status===200){
    
@@ -45,17 +43,11 @@ const AddCourse = () => {
   })
 },[])
 
-console.log(categories,"category iN editCourse  page");
   const handleThumbnailChange = (event) => {
-    // console.log("handling thumbnail change");
     const file = event.target.files[0]
-    // console.log(file);
     const isValid = file.type.toLowerCase().startsWith("image/jpeg") || file.type.toLowerCase().startsWith("image/png");
-    console.log(isValid);
     if (isValid) {
-      console.log("Yeah Ok");
       setThumbnailImageToBase(file);
-      // console.log(thumbnailImage);
       setThumbnailImageError(null);
     } else {
       setThumbnailImageError("Invalid file type. Please select valid image files.");
@@ -66,7 +58,6 @@ console.log(categories,"category iN editCourse  page");
   };
 
   const setThumbnailImageToBase = async (files) => {
-    console.log("Changing to base Format",files);
       const reader = new FileReader();
       reader.readAsDataURL(files);
       reader.onloadend = () => {

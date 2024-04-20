@@ -16,7 +16,6 @@ const StudentLogin = () => {
 
   async function onSubmit(values) {
     try {
-      console.log(values);
       const res = await studentLoginVerify(values);
       if (res.status === 200) {
         const {token,studentData}=res.data
@@ -27,7 +26,6 @@ const StudentLogin = () => {
             student:studentData
           })
         );
-        console.log(token);
         toast(res?.data?.message)
         navigate("/home");
       }

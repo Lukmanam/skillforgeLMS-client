@@ -24,7 +24,6 @@ const StudentSignup = () => {
       if (res?.status === 201) {
         const { student, otpId } = res.data;
         toast(res.data.message);
-        console.log("haaai navigation ");
         navigate("/otp", {
           state: {
             studentEmail: student.email,
@@ -32,10 +31,7 @@ const StudentSignup = () => {
             studentId: student._id,
           },
         });
-        console.log("navigation");
       }
-
-      console.log("user signed up");
     } catch (error) {
       toast.error(error.response?.data?.message);
     }

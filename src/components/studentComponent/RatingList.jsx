@@ -3,7 +3,6 @@ import { useState } from "react";
 import { fetchcoursereviews } from "../../../api/studentApi";
 import { Rating, Typography } from "@material-tailwind/react";
 const RatingList = ({ courseId }) => {
-  console.log(courseId, "in rating List");
   const [rated, setRated] = useState([]);
   const [ratingsCount, setRatingsCount] = useState(null);
   const [reviews, setReviews] = useState([]);
@@ -14,8 +13,6 @@ const RatingList = ({ courseId }) => {
       setRatingsCount(res?.data?.ratingCount);
     });
   }, []);
-  console.log(reviews, "this is whooole reviews");
-  console.log(ratingsCount, "this is the ratings count ");
   return (
     <>
       <div className="h-56 w-screen bg-slate-00">

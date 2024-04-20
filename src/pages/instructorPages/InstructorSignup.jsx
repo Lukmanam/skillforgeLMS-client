@@ -24,16 +24,12 @@ const InstructorSignup = () => {
       const res=await instructorSignup(values);
       if(res?.status===201)
       {
-        console.log("instructor Signed Up");
         const {instructor,otpId}=res.data;
         toast(res.data.message)
         navigate('/instructor/insotp',{state:{instructorEmail:instructor.email,otpId:otpId,instructorId:instructor._id},})
-        console.log("navigation");
       }
     } catch (error) {
-  
-      console.log("error is out");
-     toast.error(error?.response?.data?.message)
+       toast.error(error?.response?.data?.message)
     }
   }
   

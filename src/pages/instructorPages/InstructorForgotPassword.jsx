@@ -10,7 +10,6 @@ const InstructorForgotPassword = () => {
   
     async function onSubmit(values) {
     try {
-      console.log(values);
       const res = await instructorforgotpassword(values);
       if (res.status === 201) {
           const {instructorData}=res.data;

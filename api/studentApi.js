@@ -133,7 +133,7 @@ export const paymentApi = async (courseData,student) => {
    
 
   } catch (error) {
-    console.log("api Error", error);
+    console.log(error);
   }
 }
 

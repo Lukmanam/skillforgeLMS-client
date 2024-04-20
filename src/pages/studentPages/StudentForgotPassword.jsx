@@ -12,7 +12,6 @@ const StudentForgotPassword = () => {
 
   async function onSubmit(values) {
     try {
-      console.log(values);
       const res = await studentforgotpassword(values);
       if (res.status === 201) {
           const {studentData}=res.data;

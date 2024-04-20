@@ -8,14 +8,6 @@ const EnrolledCourses = () => {
   const [enrolledCourses, setEnrolledCourse] = useState([]);
   const { student } = useSelector((state) => state.studentReducer);
   const studentId = student?._id;
-  // useEffect(() => {
-  //   fetchEnrolledCourse(studentId).then((res) => {
-  //     setEnrolledCourse(res?.data?.enrolledCourses)
-  //     .catch((error) => {
-  //       console.log(error);
-  //     });
-  //   });
-  // },[enrolledCourses]);
   useEffect(() => {
     fetchEnrolledCourse(studentId)
       .then((res) => {

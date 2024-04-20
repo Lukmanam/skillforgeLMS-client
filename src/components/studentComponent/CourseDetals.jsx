@@ -20,7 +20,6 @@ const CourseDetals = () => {
   const [enrolledCourse, setEnrolledCourse] = useState(false);
   const [activeModal, setActiveModal] = useState(null);
   const { courseId } = useParams();
-  console.log(courseId, "this is courseId");
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -51,7 +50,6 @@ const CourseDetals = () => {
     try {
       if (studentId) {
         const res = await enrollToCourse(courseId, studentId);
-        console.log(res);
         if (res.status === 200) {
           toast.success(res?.data?.message);
           setEnrolledCourse(!enrolledCourse);
@@ -73,11 +71,8 @@ const CourseDetals = () => {
   const makePayment=async()=>{
     
 try {
-  console.log("haaaaaaaaaai in payment");
   const stripe= await loadStripe("pk_test_51OFr1pSB3NLla9eMkflIN058py6nnlYYZaTplPo90zwVxeuGbKgykFCllNFwZ3sUPSJILtGufMQFnXDkFlzNMK6d00cnKRlbN6")
-  console.log(stripe,"this is stripe");
   const res=await paymentApi(courseData[0],student);
-  console.log(res,"this is response");
   const sessionId=await res.data.id
   const result=stripe.redirectToCheckout({
     sessionId:sessionId
@@ -99,8 +94,6 @@ try {
   const closeModal = () => {
     setActiveModal(null);
   };
-
-  console.log(courseData, "module");
  
   return (
     <div>
@@ -301,7 +294,6 @@ try {
                                     data-modal-hide={`popup-modal-${courseData[0]._id}`}
                                     type="button"
                                     onClick={() => {
-                                      console.log(courseData[0]._id);
                                       enrollCourse(courseData[0]._id);
                                     }}
                                     className="text-white bg-green-600 hover:bg-green-800 focus:ring-4 focus:outline-none focus:ring-red-300 dark:focus:ring-green-800 font-medium rounded-lg text-sm inline-flex items-center px-5 py-2.5 text-center mr-2"

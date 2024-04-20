@@ -14,11 +14,9 @@ export default function OAuthins() {
 
   const handleGoogleClick = async () => {
     try {
-  console.log("clicked for google Auth Instructor");
   const provider = new GoogleAuthProvider();
   const auth = getAuth(app);
   const userData = await signInWithPopup(auth, provider);
-  console.log("Data", userData);
   const res = await insgoogleAuth(userData);
   if (res?.status === 200) {
     const { token, instructorData } = res.data;
@@ -29,7 +27,6 @@ export default function OAuthins() {
         instructor:instructorData,
       })
     );
-    console.log(token);
     toast.success(res?.data?.message);
     navigate("/instructor/home");
   }
@@ -38,7 +35,7 @@ export default function OAuthins() {
     toast(res?.data?.message);
   }
 } catch (error) {
-  console.log(error, "Couldnot with Google");
+  console.log(error);
 }
 };
 

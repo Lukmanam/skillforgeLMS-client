@@ -14,7 +14,6 @@ import { adminLogin } from "../../reduxStore/slices/adminSlice";
 const AdminLogin = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  console.log("Hai admin Login page");
   async function onSubmit(values) {
     try { 
       const res = await adminLoginVerify(values);

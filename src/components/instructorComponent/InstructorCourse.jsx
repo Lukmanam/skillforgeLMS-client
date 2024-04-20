@@ -12,9 +12,7 @@ const navigate=useNavigate()
 const { instructor } = useSelector((state) => state.instructorReducer);
 const [loading,setLoading]=useState(false)
 
-console.log("this is instructor",instructor);
 const instructorId=instructor._id
-console.log(instructorId);
 
   useEffect(() => {
     setLoading(true)

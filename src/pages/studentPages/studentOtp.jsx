@@ -31,7 +31,6 @@ const StudentOtp = () => {
     try {
       const combainedOtp = Object.values(values).join("");
       const res = await otpVetification(combainedOtp, otpId, studentId);
-      console.log(res);
       {
         toast(res.data.message);
         navigate("/login", { state: "Email verified" });

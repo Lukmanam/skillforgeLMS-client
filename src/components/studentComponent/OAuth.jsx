@@ -13,11 +13,9 @@ export default function OAuth() {
     
     const handleGoogleClick = async () => {
         try {
-      console.log("clicked for google Auth");
       const provider = new GoogleAuthProvider();
       const auth = getAuth(app);
       const userData = await signInWithPopup(auth, provider);
-      console.log("Data", userData);
       const res = await googleAuth(userData);
       if (res?.status === 200) {
         const { token, studentData } = res.data;
@@ -28,7 +26,6 @@ export default function OAuth() {
             student: studentData,
           })
         );
-        console.log(token);
         toast(res?.data?.message);
         navigate("/home");
       }

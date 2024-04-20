@@ -10,13 +10,11 @@ import PlayButton from "./PlayButton";
 import { checklistStatus } from "../../../api/instructorApi";
 
 const UpdateCourse = () => {
-  console.log("trying to update course");
   const [course, setCourse] = useState(null);
   const [loading, setLoading] = useState(false);
   const [modules, setModules] = useState([]);
   const [Listed, setis_Listed] = useState(false);
   const { id } = useParams();
-  console.log(id, "this is course id in update page");
 
   const listUnlist = async (courseId) => {
     try {
@@ -31,10 +29,8 @@ const UpdateCourse = () => {
   };
 
   useEffect(() => {
-    console.log("hai to api");
     fetchCourseData(id)
       .then((res) => {
-        console.log(res?.data, "this is response");
         setCourse(res?.data?.courseData);
         setModules(res?.data?.modules);
         setis_Listed(res?.data?.status);
@@ -49,10 +45,6 @@ const UpdateCourse = () => {
       }
     });
   }, [Listed,modules]);
-
-  console.log(course, "THIS IS FETCHEDD course");
-  console.log(modules);
-
   return (
     <>
       <InstructorNavbar />

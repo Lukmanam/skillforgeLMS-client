@@ -23,20 +23,14 @@ const LearningPage = () => {
     setLoading(true);
     courseLearn(courseId)
       .then((res) => {
-        console.log(res?.data.course, "this is response data course");
         setCourse(res?.data?.course);
-
         setLoading(false);
-
-        console.log(course, "setted COURSE");
         if (
           res?.data?.course?.modules &&
           res?.data?.course?.modules?.length > 0
         ) {
-          console.log(res?.data?.course?.modules[0].module, "this is cousre");
           setSelectedModule(res?.data?.course?.modules[0]?.module);
         }
-        // setSelectedModule(course?.modules[0]?.module?.video_url);
       })
       .catch((error) => {
         setLoading(false);
@@ -44,19 +38,12 @@ const LearningPage = () => {
         console.log(error);
       });
   }, []);
-
-  console.log(course, "this is the course");
-
+  
   useEffect(() => {
     alreadyCompletedModules(courseId, studentId)
       .then((res) => {
-        console.log(res.data.modulesCompleted, "completed Modules response");
         const modulesCompleted = res?.data?.modulesCompleted;
-        console.log(modulesCompleted, "this is module completed");
-        console.log(modulesCompleted.Progress);
         setCompletedModules(modulesCompleted.Progress);
-        console.log(modulesCompleted);
-        console.log(completedModules, "all Completed Modu");
       })
       .catch((error) => {
         console.log(error);
@@ -64,13 +51,10 @@ const LearningPage = () => {
   }, []);
 
   const handleModuleClick = (module) => {
-    console.log(module, "this is module in  handling");
-    console.log("handling module click");
     setSelectedModule(module);
   };
 
   const handleVideoEnd = (moduleId) => {
-    console.log(moduleId);
     if (!completedModules.includes(moduleId)) {
       setCompletedModules([...completedModules, selectedModule._id]);
       saveCourseProgression(courseId, studentId, selectedModule._id);
@@ -84,10 +68,6 @@ const LearningPage = () => {
   const isModuleCompleted = (moduleId) => {
     return completedModules.includes(moduleId);
   };
-
-  // console.log(selectedModule, "this is selected MOdule");
-  // console.log(course, "cpurse Saved In Array");
-
   return (
     <>
       {loading ? (

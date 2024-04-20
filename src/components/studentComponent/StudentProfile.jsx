@@ -26,13 +26,11 @@ const studentProfile = () => {
   });
 
   async function onSubmit(values) {
-    console.log(values);
     const res = await editStudentProfile(studentId, values);
 
     if (res.status === 200) {
       setEdit(false);
       const { updatedprofile } = res.data;
-      console.log("Udated", updatedprofile);
       dispatch(
         studentLogin({
           student: updatedprofile,

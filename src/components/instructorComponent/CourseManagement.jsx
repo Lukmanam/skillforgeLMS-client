@@ -28,17 +28,7 @@ const CourseManagement = () => {
         })
     },[])
 
-    console.log(course);
-    
-    
 
-    // const openModal=(studentId)=>{
-    //     setActiveModal(studentId);
-    // }
-
-    // const closeModal=()=>{
-    //     setActiveModal(null)
-    // }
 
     
 const openModal = () => {

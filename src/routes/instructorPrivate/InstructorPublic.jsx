@@ -2,7 +2,6 @@ import { Navigate } from "react-router-dom";
 const InstructorPublic=(props)=>{
     try {
         if (localStorage.getItem("instructorToken")) {
-            console.log("token Und iNSTRUCTORKK")
           return <Navigate to="/instructor/home" />;
         } else {
           <Navigate to="/instructor/login" />;

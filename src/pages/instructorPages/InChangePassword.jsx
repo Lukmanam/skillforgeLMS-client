@@ -14,13 +14,10 @@ const InChangePassword = () => {
   const location=useLocation();
   const searchParams=new URLSearchParams(location.search);
   const id=searchParams.get("id")
-  console.log(id);
 
   async function onSubmit(values) {
     try {
-        console.log(values,"values");
         const res=await InstructorChangePassword({...values,id});
-        console.log("hello");
         if(res.status===201){
             toast.success("Password Changed Successfully, You can login Now")
             navigate('/instructor');

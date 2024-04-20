@@ -15,7 +15,6 @@ const Chat = ({instructorId}) => {
   },[])
   
 
-  console.log("this is instructor Id in",instructorId);
   return (
     <div className='p-5'>
       <div className="sm:w-3/4 md:w-full max-h-3/4 overflow-auto  bg-white ">

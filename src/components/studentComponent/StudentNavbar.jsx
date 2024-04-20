@@ -27,7 +27,6 @@ const StudentNavbar = () => {
 
   const { student } = useSelector((state) => state.studentReducer);
   const handleLogout = async () => {
-    console.log("Logging out Student");
     localStorage.removeItem("studentToken");
     dispatch(studentLogout());
     toast("LoggedOut Successfully ");

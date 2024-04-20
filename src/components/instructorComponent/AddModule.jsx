@@ -30,11 +30,9 @@ const AddModule=({course,setModules})=> {
             video_url: video,
             course: course._id,
           };
-        console.log(formData,"hello adding new Module");
         const res=await AddModuleapi({formData});
         if(res.status===200)
         {
-            console.log("Success");
             navigate("/instructor/courseManagement");
             toast.success(res?.data?.message)
         }
@@ -43,12 +41,10 @@ const AddModule=({course,setModules})=> {
     }
 
     const handleVideoChange=(event)=>{
-        console.log("performing change of video file");
         const file = event.target.files[0];
         const isValid = file.type.toLowerCase().startsWith("video/");
         if(isValid)
         {
-            console.log("okay,video");
             setVideoToBase(file)
             setVideoError(null)
         }
@@ -62,7 +58,6 @@ const AddModule=({course,setModules})=> {
     };
 
     const setVideoToBase=async(file)=>{
-      console.log("Changing to base Format",file);
       const reader = new FileReader();
       reader.readAsDataURL(file);
       reader.onloadend = () => {

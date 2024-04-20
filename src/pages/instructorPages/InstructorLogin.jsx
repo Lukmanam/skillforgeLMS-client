@@ -16,11 +16,9 @@ const InstructorLogin = () => {
 
   async function onSubmit(values) {
     try {
-      console.log(values);
       const res = await InstructorLoginVerify(values);
       if (res.status === 200) {
         const { token, instructor } = res.data;
-        console.log(res.data,"jhbvb");
         localStorage.setItem("instructorToken", token);
         dispatch(
           instructorLogin({
@@ -28,7 +26,6 @@ const InstructorLogin = () => {
             instructor: instructor ,
           })
         );
-        console.log("token in frondend for instructor", token);
         toast(res?.data?.message);
         navigate("/instructor/home");
       } else if (res.status === 401) {

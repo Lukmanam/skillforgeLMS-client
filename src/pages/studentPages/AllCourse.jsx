@@ -50,18 +50,13 @@ const AllCourse = () => {
   },[searchQuery])
 
   useEffect(()=>{
-    console.log(filterCategory,"this is the category for filtering");
-    
-    filterbyCategory(filterCategory).then((res)=>{
+        filterbyCategory(filterCategory).then((res)=>{
       const filtered=res.data.filtered;
       setCourses(filtered)
     }).catch((error)=>{
       console.log(error);
     })
   },[filterCategory])
-
-  console.log(courses, "these are courses");
-  console.log(categories, "categories in full Course Page");
 
   return (
     <>

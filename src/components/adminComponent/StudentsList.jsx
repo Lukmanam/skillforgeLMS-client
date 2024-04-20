@@ -26,7 +26,6 @@ const StudentList=()=>{
 
      const blockUnblockStudent = async (studentId, status) => {
         try {
-          console.log("this is student id in frontend");
           const res = await studentBlock(studentId, status);
           if (res.status === 200) {
             let updatedData = students.map((student) => {
@@ -42,7 +41,7 @@ const StudentList=()=>{
             setActiveModal(null);
           }
         } catch (error) {
-          console.log("Error:", error.message);
+          console.log( error.message);
         }
       };
       
@@ -240,7 +239,6 @@ const StudentList=()=>{
                                   data-modal-hide={`popup-modal-${data._id}`}
                                   type="button"
                                   onClick={() => {
-                                    console.log('Clicked category Id', data._id); // Log the clicked student ID
                                     blockUnblockStudent(data._id, data.isBlocked);
                                   }}
                                   

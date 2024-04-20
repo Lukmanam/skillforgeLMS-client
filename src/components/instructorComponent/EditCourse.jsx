@@ -68,7 +68,6 @@ const EditCourse = ({ courseId }) => {
   };
 
   const setThumbnailImageToBase = async (files) => {
-    console.log("Changing to base Format", files);
     const reader = new FileReader();
     reader.readAsDataURL(files);
     reader.onloadend = () => {

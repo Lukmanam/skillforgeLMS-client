@@ -7,15 +7,11 @@ const ModuleDelete = ({ module, setModules, modules,courseId}) => {
   
 
   const handleModuleDelete = async (moduleId) => {
-    console.log(module,"this is module data");
-    console.log(modules,"these are all modules");
     try {
       const response = await deleteModule(moduleId,courseId);
-      console.log(response,"this is module response");
       const updatedModuleList = modules.filter(
         (module) => module._id !== moduleId
       );
-      console.log(updatedModuleList,"this is updated module list");
       setModules(updatedModuleList);
       toast.success("Module deleted successfully.");
       document.getElementById(`module_delete_modal_${module._id}`).close();

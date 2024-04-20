@@ -7,7 +7,6 @@ import {otpValidation} from "../../validations/student/otpValidation"
 import { instructorResendOtp} from "../../../api/instructorApi";
 
 const InstructorOtp = () => {
-  console.log("in intructor OTP PAGE");
   const location = useLocation();
   const navigate = useNavigate();
   const { instructorEmail, instructorId, otpId } = location.state;
@@ -33,7 +32,6 @@ const InstructorOtp = () => {
     try {
       const combainedOtp = Object.values(values).join("");
       const res = await instructorotpVerification(combainedOtp, otpId, instructorId);
-      console.log(res);
       {
         toast(res.data.message);
         navigate("/instructor/login", { state: "Email verified" });

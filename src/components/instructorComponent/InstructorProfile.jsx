@@ -22,12 +22,10 @@ const InstructorProfile = () => {
     try {
      
       const res = await editProfileData(values, instructorId);
-      console.log(res.data, "this is response");
       if (res.status == 200) {
      
         setEdit(false);
         const { updatedInstructor } = res.data;
-        console.log("this is instructor", updatedInstructor);
         dispatch(
           instructorLogin({
             instructor: updatedInstructor,

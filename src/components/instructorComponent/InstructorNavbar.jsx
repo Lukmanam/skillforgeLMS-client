@@ -25,7 +25,6 @@ const InstructorNavbar = () => {
 
   const { instructor } = useSelector((state) => state.instructorReducer);
   const handleLogout = async () => {
-    console.log("Logging out Instructor");
     localStorage.removeItem("instructorToken");
     dispatch(instructorLogout());
     toast("LoggedOut Successfully ");

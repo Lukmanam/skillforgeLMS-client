@@ -11,11 +11,7 @@ const [instructor,setInstructor]=useState(null)
 const { student } = useSelector((state) => state.studentReducer);
 const studentId=student._id
 
-console.log(studentId,"THIS IS STUDENTID ");
 const {courseId}=useParams();
-
-console.log(courseId,"THIS IS COURSE ID");
-
 useEffect(()=>{
   
     getInstructor(courseId).then((res)=>{
@@ -27,7 +23,6 @@ useEffect(()=>{
 
   })
   useEffect(()=>{
-    console.log(instructor);
     enrollToCourse(courseId, studentId)
     enableChat(studentId,instructor)
 

@@ -23,27 +23,8 @@ const InstructorsList=()=>{
 
         })
     },[])
-
-    // const blockUnblockStudent=async(studentId,status)=>{
-    //     console.log("this is student id in frontend",studentId);
-    //     const res=await studentBlock(studentId,status);
-    //     if (res.status===200){
-    //         let updatedData= students.map((student)=>{
-    //             let studentData={...student};
-    //             if(studentData._id===studentId){
-    //                 studentData.isBlocked=!status
-    //             }
-    //             console.log("this is studentData",studentData);
-    //             return studentData
-    //         })
-    //         setStudents=(updatedData);
-    //         setActiveModal(null);
-
-    //     }
-    // }
      const blockUnblockInstructor = async (instructorId, status) => {
         try {
-          console.log("this is Instroctor id in frontend");
           const res = await instructorBlock(instructorId, status);
           if (res.status === 200) {
             let updatedData = instructors.map((instructor) => {
@@ -59,7 +40,7 @@ const InstructorsList=()=>{
             setActiveModal(null);
           }
         } catch (error) {
-          console.log("Error:", error.message);
+          console.log(error.message);
         }
       };
       
@@ -262,7 +243,6 @@ const InstructorsList=()=>{
                                   data-modal-hide={`popup-modal-${data._id}`}
                                   type="button"
                                   onClick={() => {
-                                    console.log('Clicked student ID:', data._id); // Log the clicked student ID
                                     blockUnblockInstructor(data._id, data.isBlocked);
                                   }}
                                   

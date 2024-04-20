@@ -15,7 +15,6 @@ const AdminNavbar = () => {
 
   const { admin } = useSelector((state) => state.adminReducer);
   const handleLogout = async () => {
-    console.log("Logging Out");
     localStorage.removeItem("adminToken");
     dispatch(adminLogout());
     toast("LoggedOut Successfully");
