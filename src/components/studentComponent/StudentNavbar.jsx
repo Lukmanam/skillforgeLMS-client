@@ -165,7 +165,7 @@ const StudentNavbar = () => {
           >
             <div className="w-10 rounded-full">
               <img
-                alt="Tailwind CSS Navbar component"
+                alt="profile"
                 src="./assets/profile.png"
               />
             </div>
