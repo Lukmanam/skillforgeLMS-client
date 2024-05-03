@@ -14,9 +14,9 @@ const Banner = () => {
       
       <div className="flex w-full m-auto justify-evenly  ">
       <img
-        src="./public/assets/adimg2.png"
+        src="./assets/adimg2.png"
         alt="Courses Banner"
-        className="rounded-lg w-60 h-80 fade-ef md:block hidden"
+        className="fade-eff rounded-lg w-60 h-80 hidden md:block"
       />
      
       
