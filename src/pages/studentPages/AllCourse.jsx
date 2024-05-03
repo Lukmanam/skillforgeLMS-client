@@ -6,6 +6,7 @@ import CourseCard from "../../components/studentComponent/CourseCard";
 import { listCategories } from "../../../api/studentApi";
 import { searchCourses } from "../../../api/studentApi";
 import { filterbyCategory } from "../../../api/studentApi";
+import StudentFooter from "../../components/studentComponent/StudentFooter";
 
 
 const AllCourse = () => {
@@ -61,14 +62,14 @@ const AllCourse = () => {
   return (
     <>
       <StudentNavbar />
-      <div className="w-auto h-44  bg-cyan-900 text-slate-100">
-        <p className="flex items-center p-14 text-3xl text-slate-300 shadow-lg  font-sans">
+      <div className="w-auto h-44  bg-gray-800 text-slate-100">
+        <p className=" welcome-note flex items-center p-14 text-3xl text-slate-100  shadow-lg  font-sans">
           Take your career to the next level with SkillForGe
         </p>
       </div>
       <div className="flex flex-col lg:flex-row">
         {/* Left-sided category filter */}
-        <div className="lg:w-72 bg-slate-200  p-5">
+        <div className="lg:w-72 bg-slate-100  p-5">
           {loading?(
             <>
              <div className="mb-4 h-16 bg-gray-300 rounded-md"></div>
@@ -86,11 +87,11 @@ const AllCourse = () => {
               {" "}
              
             </li>
-            <ul>
+            <ul className="category">
               {
                 categories && categories.length > 0 ? (
                   categories.map((data) => (
-                    <button className=" btn btn-rounded w-full  bg-slate-400 text-slate-900 p-3 " onClick={
+                    <button className=" btn btn-rounded w-full  bg-slate-50 text-slate-900 p-3 " onClick={
                       ()=>setfilterCategory(data._id)
                      
                       }>
@@ -110,7 +111,7 @@ const AllCourse = () => {
         </div>
 
         {/* Listing all courses in the rest of the space */}
-        <div className="lg:w-5/6 bg-slate-200 h-full p-4 shadow-2xl shadow-slate-300 ">
+        <div className="lg:w-5/6 bg-slate-50 h-full p-4 shadow-2xl shadow-slate-00 ">
        
           <div className="flex items-center justify-center">
   <div className="flex w-full" > {/* Use flex container */}
@@ -123,13 +124,13 @@ const AllCourse = () => {
       onChange={(e)=>setSearchQuery(e.target.value)}
       className="input input-bordered w-full md:w-36 lg:w-full"
     />
-    <button
+    {/* <button
       type="button"
       className="btn bg-slate-200 ml-2 w-20"
       disabled
     >
       Search
-    </button>
+    </button> */}
   </div>
 </div>
 {loading?( <>
@@ -138,22 +139,22 @@ const AllCourse = () => {
           
           <div className="container mx-auto my-8 bg-slate-200 rounded-md p-4">
             <div className="flex flex-wrap items-center">
-            <div className="course-card bg-gray-500 rounded-lg outline-slate-500 shadow-lg overflow-hidden m-2 h-auto w-full lg:w-68"><div  className="w-full h-64"></div></div>
-            <div className="course-card bg-gray-500 rounded-lg outline-slate-500 shadow-lg overflow-hidden m-2 h-auto w-full lg:w-68"><div  className="w-full h-64"></div></div>
-            <div className="course-card bg-gray-500 rounded-lg outline-slate-500 shadow-lg overflow-hidden m-2 h-auto w-full lg:w-68"><div  className="w-full h-64"></div></div>
-            <div className="course-card bg-gray-500 rounded-lg outline-slate-500 shadow-lg overflow-hidden m-2 h-auto w-full lg:w-68"><div  className="w-full h-64"></div></div>
-            <div className="course-card bg-gray-500 rounded-lg outline-slate-500 shadow-lg overflow-hidden m-2 h-auto w-full lg:w-68"><div  className="w-full h-64"></div></div>
-            <div className="course-card bg-gray-500 rounded-lg outline-slate-500 shadow-lg overflow-hidden m-2 h-auto w-full lg:w-68"><div  className="w-full h-64"></div></div>
-            <div className="course-card bg-gray-500 rounded-lg outline-slate-500 shadow-lg overflow-hidden m-2 h-auto w-full lg:w-68"><div  className="w-full h-64"></div></div>
-            <div className="course-card bg-gray-500 rounded-lg outline-slate-500 shadow-lg overflow-hidden m-2 h-auto w-full lg:w-68"><div  className="w-full h-64"></div></div>
-            <div className="course-card bg-gray-500 rounded-lg outline-slate-500 shadow-lg overflow-hidden m-2 h-auto w-full lg:w-68"><div  className="w-full h-64"></div></div>
-            <div className="course-card bg-gray-500 rounded-lg outline-slate-500 shadow-lg overflow-hidden m-2 h-auto w-full lg:w-68"><div  className="w-full h-64"></div></div>
-            <div className="course-card bg-gray-500 rounded-lg outline-slate-500 shadow-lg overflow-hidden m-2 h-auto w-full lg:w-68"><div  className="w-full h-64"></div></div>
-            <div className="course-card bg-gray-500 rounded-lg outline-slate-500 shadow-lg overflow-hidden m-2 h-auto w-full lg:w-68"><div  className="w-full h-64"></div></div>
-            <div className="course-card bg-gray-500 rounded-lg outline-slate-500 shadow-lg overflow-hidden m-2 h-auto w-full lg:w-68"><div  className="w-full h-64"></div></div>
-            <div className="course-card bg-gray-500 rounded-lg outline-slate-500 shadow-lg overflow-hidden m-2 h-auto w-full lg:w-68"><div  className="w-full h-64"></div></div>
-            <div className="course-card bg-gray-500 rounded-lg outline-slate-500 shadow-lg overflow-hidden m-2 h-auto w-full lg:w-68"><div  className="w-full h-64"></div></div>
-            <div className="course-card bg-gray-500 rounded-lg outline-slate-500 shadow-lg overflow-hidden m-2 h-auto w-full lg:w-68"><div  className="w-full h-64"></div></div>
+            <div className="course-card bg-gray-300 rounded-lg outline-slate-500 shadow-lg overflow-hidden m-2 h-auto w-full lg:w-68"><div  className="w-full h-64"></div></div>
+            <div className="course-card bg-gray-300 rounded-lg outline-slate-500 shadow-lg overflow-hidden m-2 h-auto w-full lg:w-68"><div  className="w-full h-64"></div></div>
+            <div className="course-card bg-gray-300 rounded-lg outline-slate-500 shadow-lg overflow-hidden m-2 h-auto w-full lg:w-68"><div  className="w-full h-64"></div></div>
+            <div className="course-card bg-gray-300 rounded-lg outline-slate-500 shadow-lg overflow-hidden m-2 h-auto w-full lg:w-68"><div  className="w-full h-64"></div></div>
+            <div className="course-card bg-gray-300 rounded-lg outline-slate-500 shadow-lg overflow-hidden m-2 h-auto w-full lg:w-68"><div  className="w-full h-64"></div></div>
+            <div className="course-card bg-gray-300 rounded-lg outline-slate-500 shadow-lg overflow-hidden m-2 h-auto w-full lg:w-68"><div  className="w-full h-64"></div></div>
+            <div className="course-card bg-gray-300 rounded-lg outline-slate-500 shadow-lg overflow-hidden m-2 h-auto w-full lg:w-68"><div  className="w-full h-64"></div></div>
+            <div className="course-card bg-gray-300 rounded-lg outline-slate-500 shadow-lg overflow-hidden m-2 h-auto w-full lg:w-68"><div  className="w-full h-64"></div></div>
+            <div className="course-card bg-gray-300 rounded-lg outline-slate-500 shadow-lg overflow-hidden m-2 h-auto w-full lg:w-68"><div  className="w-full h-64"></div></div>
+            <div className="course-card bg-gray-300 rounded-lg outline-slate-500 shadow-lg overflow-hidden m-2 h-auto w-full lg:w-68"><div  className="w-full h-64"></div></div>
+            <div className="course-card bg-gray-300 rounded-lg outline-slate-500 shadow-lg overflow-hidden m-2 h-auto w-full lg:w-68"><div  className="w-full h-64"></div></div>
+            <div className="course-card bg-gray-300 rounded-lg outline-slate-500 shadow-lg overflow-hidden m-2 h-auto w-full lg:w-68"><div  className="w-full h-64"></div></div>
+            <div className="course-card bg-gray-300 rounded-lg outline-slate-500 shadow-lg overflow-hidden m-2 h-auto w-full lg:w-68"><div  className="w-full h-64"></div></div>
+            <div className="course-card bg-gray-300 rounded-lg outline-slate-500 shadow-lg overflow-hidden m-2 h-auto w-full lg:w-68"><div  className="w-full h-64"></div></div>
+            <div className="course-card bg-gray-300 rounded-lg outline-slate-500 shadow-lg overflow-hidden m-2 h-auto w-full lg:w-68"><div  className="w-full h-64"></div></div>
+            <div className="course-card bg-gray-300 rounded-lg outline-slate-500 shadow-lg overflow-hidden m-2 h-auto w-full lg:w-68"><div  className="w-full h-64"></div></div>
             
             
 
@@ -168,7 +169,7 @@ const AllCourse = () => {
         </div>
       </>):(
 
-          <div className="course-list flex space-x-4 p-5  ">
+          <div className="course-list flex space-x-4 p-5 mb-32">
             <div className="course-list   flex flex-wrap  mx-auto mb-6">
               {courses && courses.length > 0 ? (
                 courses.map((data) => (
@@ -186,6 +187,7 @@ const AllCourse = () => {
 
         </div>
       </div>
+      <StudentFooter/>
     </>
   );
 };

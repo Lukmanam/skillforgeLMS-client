@@ -1,0 +1,102 @@
+/* .fade-ef {
+    opacity: 0;
+    animation: fadeIn 2s ease-in-out forwards;
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateX(-70px);
+    }
+    to {
+      opacity: 5;
+      transform: translateY(0);
+    }
+  }
+
+  .fade-ef {
+    opacity: 0;
+    animation: fadeIn 2s ease-in-out forwards;
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(-70px);
+    }
+    to {
+      opacity: 5;
+      transform: translateY(0);
+    }
+  } */
+  .fade-ef {
+    opacity: 0;
+    animation: fadeInTopToBottom 1.5s ease-in-out forwards;
+  }
+  
+  @keyframes fadeInTopToBottom {
+    from {
+      opacity: 0;
+      transform: translateY(-70px); /* Start from above */
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0); /* Move down to its original position */
+    }
+  }
+  
+  .fade-eff {
+    opacity: 0;
+    animation: fadeInBottomToTop 2s ease-in-out forwards;
+  }
+  .fade-effm{
+    opacity: 0;
+    animation: fadeInBottomToTop 1s ease-in-out forwards;
+  }
+  
+  @keyframes fadeInBottomToTop {
+    from {
+      opacity: 0;
+      transform: translateY(70px); /* Start from below */
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0); /* Move up to its original position */
+    }
+  }
+
+
+  .welcome-note{
+    opacity: 0;
+    animation: fadeInTopToBottom 2s ease-in-out forwards;
+  }
+
+  .welcome-note2{
+ opacity: 0;
+    animation:  fadeInBottomToTop 1.5s ease-in-out forwards;
+  }
+
+
+
+  .course-card {
+    opacity: 0;
+    animation: fadeIn 0.9s ease-in-out forwards;
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  
+  .category{
+    opacity: 0;
+    animation: fadeIn 0.9s ease-in-out forwards;
+  }
+  

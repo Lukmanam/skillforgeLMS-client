@@ -17,7 +17,7 @@ const CourseCardEnrolled = ({ value }) => {
   const progressPercent = Math.floor((progressValue / modulescount) * 100);
 
   return (
-    <div className=" bg-white rounded-lg outline-double outline-slate-500 shadow-lg overflow-hidden m-2  h-auto w-60">
+    <div className="course-card bg-white rounded-lg outline-slate-500 shadow-lg overflow-hidden m-2 h-auto w-full lg:w-68">
       <Link to={`/learn/${value?.courseId._id}`}>
         <img
           src={value?.courseId?.thumbnail}

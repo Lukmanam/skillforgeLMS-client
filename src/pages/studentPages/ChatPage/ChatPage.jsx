@@ -4,7 +4,7 @@ import StudentNavbar from '../../../components/studentComponent/StudentNavbar';
 const ChatPage = () => {
   return (
 
-    <div>
+    <div className='overflow-hidden'>
         <StudentNavbar />
         <Chat/>
     </div>

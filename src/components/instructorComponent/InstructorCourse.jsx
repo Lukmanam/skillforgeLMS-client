@@ -35,7 +35,7 @@ const instructorId=instructor._id
       {loading ? (
         <>loading</>
       ) : (
-        <div className="w-screen h-full p-3  bg-slate-200 ">
+        <div className="w-screen h-full p-3  bg-white ">
          {/* <h1 className="mt-5 text-lg"> Your Top Rated Courses</h1> */}
           <div className="course-list flex flex-wrap  mx-auto items-center justify-center">
             {course.map((data) => (

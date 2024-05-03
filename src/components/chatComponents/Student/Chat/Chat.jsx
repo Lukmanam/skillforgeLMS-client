@@ -84,9 +84,10 @@ const Chat = () => {
         <div className='min-h-screen bg-blue-50'>
           <div className='w-full md:w-96 h-screen bg-white mx-auto md:me-10'>
             <div className='overflow-y-auto h-screen md:h-screen'>
+              <p className='bg-green-200 font-semibold'><span>Chats</span></p>
               {conversations.length === 0 ? (
                 <div className='text-xl text-gray-600 text-center'>
-                  <p className='m-20'>No chats</p>
+                  <p className='m-20 font-semibold'>No chats</p>
 
                 </div>
               ) : (

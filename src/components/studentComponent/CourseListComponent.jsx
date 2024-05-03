@@ -21,7 +21,7 @@ const CourseList = () => {
   }, []);
 
   return (
-    <div className="p-7  bg-neutral-200">
+    <div className="p-7  bg-white">
       <b>Popular Courses</b>
 
       <div className="course-list flex space-x-4 p-2 justify-center items-center">
@@ -48,11 +48,11 @@ const CourseList = () => {
             </>
         ):(
 
-        <div className="course-list   flex flex-wrap  mx-auto mb-6">
+        <div className="course-list   flex flex-wrap  mx-auto mb-6 ">
           {courses && courses.length > 0 ? (
             courses.map((data) => <CourseCard key={data._id} value={data} />)
           ) : (
-            <div className="course-list flex flex-wrap space-x-4 p-4 mb-5">
+            <div className="course-list flex flex-wrap space-x-4 p-4 mb-5 ">
               Courses not Available
             </div>
           )}

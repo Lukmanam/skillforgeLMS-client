@@ -6,12 +6,14 @@ import { useSelector } from "react-redux";
 
 const EnrolledCourses = () => {
   const [enrolledCourses, setEnrolledCourse] = useState([]);
+  const [loading,setLoading]=useState(true)
   const { student } = useSelector((state) => state.studentReducer);
   const studentId = student?._id;
   useEffect(() => {
     fetchEnrolledCourse(studentId)
       .then((res) => {
         setEnrolledCourse(res?.data?.enrolledCourses);
+        setLoading(false)
       })
       .catch((error) => {
         console.error(error);
@@ -21,7 +23,24 @@ const EnrolledCourses = () => {
   return (
     <>
       <StudentNavbar />
-      <div className="lg:w-screen bg-slate-300 h-screen items-center justify-center  p-4">       
+      <div className="w-auto h-32  bg-gray-800 text-slate-100">
+        <p className=" welcome-note flex items-center p-11 text-3xl text-slate-100  shadow-lg  font-sans">
+          Courses On progress
+        </p>
+      </div>
+      <div className="lg:w-screen bg-slate-50 h-screen items-center justify-center  p-4">   
+      {loading?(
+        <div className="animate-pulse mt-10">
+        <div className="flex flex-wrap items-center">
+          <div className="course-card bg-gray-300 rounded-lg outline-slate-500 shadow-lg overflow-hidden m-2 h-auto w-full  lg:w-68"><div  className="w-full h-64"></div></div>
+          <div className="course-card bg-gray-300 rounded-lg outline-slate-500 shadow-lg overflow-hidden m-2 h-auto w-full lg:w-68"><div  className="w-full h-64"></div></div>
+          <div className="course-card bg-gray-300 rounded-lg outline-slate-500 shadow-lg overflow-hidden m-2 h-auto w-full lg:w-68"><div  className="w-full h-64"></div></div>
+          <div className="course-card bg-gray-300 rounded-lg outline-slate-500 shadow-lg overflow-hidden m-2 h-auto w-full lg:w-68"><div  className="w-full h-64"></div></div>
+          
+        </div>
+        </div>
+      ):(
+
        <div className="course-list flex flex-wrap items-center p-4 mb-5">
           {enrolledCourses && enrolledCourses.length > 0 ? (
             enrolledCourses.map((data) => <CourseCardEnrolled key={data._id} value={data} />)
@@ -42,6 +61,7 @@ const EnrolledCourses = () => {
             </div>
           )}
         </div>
+      )}    
       </div>
     </>
   );

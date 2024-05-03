@@ -5,7 +5,7 @@ import CourseManagement from '../../components/instructorComponent/CourseManagem
 const CourseManagementPage = () => {
   return (
     <div>
-      <div className="items-center bg-slate-300 ">
+      <div className="items-center ">
 <InstructorNavbar/>
 <CourseManagement/>
 

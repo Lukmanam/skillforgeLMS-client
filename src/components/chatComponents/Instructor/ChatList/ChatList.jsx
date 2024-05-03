@@ -19,15 +19,15 @@ const ChatList = ({ data, currentinstructorId }) => {
 
   return (
     <div>
-      <div className='border-b bg-slate-200'>
+      <div className=' fade-eff border-b bg-slate-200'>
         {
           userDetails && (
-            <div className='flex items-center hover:bg-blue-50 focus:bg-slate-50 '>
-              <div className='m-3 '>
+            <div className='flex items-center bg-white hover:bg-slate-50 cursor-pointer mb-0.5 shadow-lg'>
+              <div className='m-0.5 '>
                 <img
                   src="../assets/chatAvatar.png"
                   alt={`Photo of ${userDetails.name}`}
-                  className='w-14 h-14 rounded-full mb-4 mx-auto object-cover'
+                  className='w-14 h-14 rounded-full m-2 mx-auto object-cover'
                 />
               </div>
               <div>

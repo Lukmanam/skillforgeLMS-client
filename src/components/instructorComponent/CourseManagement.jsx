@@ -42,9 +42,9 @@ const closeModal = () => {
   return (
     <>
   
-    <div className="w-full p-5 flex justify-center items-center ">          
+    <div className=" w-full  flex justify-center items-center  ">          
     <div className=" dark:border-gray-700">
-        <div className=" relative  shadow-xl sm:rounded-xl bg-slate-100">
+        <div className=" fade-eff relative  shadow-xl sm:rounded-xl bg-slate-100">
          
           <h1 className="text-3xl pt-2 text-center"><b>Course</b></h1>
         

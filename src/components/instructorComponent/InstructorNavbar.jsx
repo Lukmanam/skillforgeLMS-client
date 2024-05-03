@@ -68,7 +68,7 @@ const InstructorNavbar = () => {
               isOpen={modalIsOpen}
               onRequestClose={closeModal}
               contentLabel="Add New Course Modal"
-              className="w-3/4 md:w-1/2 lg:w-2/5 xl:w-1/3 mx-auto bg-slate-200 mt-10 rounded-box"
+              className="fade-effm w-3/4 md:w-1/2 lg:w-2/5 xl:w-1/3 mx-auto bg-slate-200 mt-10 rounded-box "
             >
               {/*  */}
               <div className="flex justify-end">
